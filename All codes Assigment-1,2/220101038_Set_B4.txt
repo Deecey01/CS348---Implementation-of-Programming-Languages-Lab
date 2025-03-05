@@ -1,0 +1,92 @@
+section .bss
+    inpString resb 100
+    answer resb 100
+
+section .data
+    enterStringMessage db 'Enter a string: ', 0
+    newline db 10
+
+section .text
+    global _start
+
+_start:
+    mov eax, 4
+    mov ebx, 1
+    lea ecx, [enterStringMessage]
+    mov edx, 17
+    int 0x80
+
+    mov eax, 3
+    mov ebx, 0
+    lea ecx, [inpString]
+    mov edx, 100
+    int 0x80
+
+    lea esi, [inpString]
+    lea edi, [answer]
+
+next_char:
+    mov al, [esi]
+    test al, al
+    jz End
+
+    ; special case for 'z'
+    cmp al, 'z'
+    je changeToA
+
+    cmp al, 'a'
+    jl not_lower
+    cmp al, 'z'
+    jg not_lower
+
+    ; increasing alphabet
+    inc al
+    jmp store_char
+
+changeToA:
+    mov al, 'A'
+    jmp store_char
+
+not_lower:
+    ; special case for 'Z'
+    cmp al, 'Z'
+    je wrap_to_lower
+
+    cmp al, 'A'
+    jl store_char
+    cmp al, 'Z'
+    jg store_char
+
+    ; increasing alphabet
+    inc al
+    jmp store_char
+
+wrap_to_lower:
+    mov al, 'a'
+    jmp store_char
+
+store_char:
+    ; storing the characters of string
+    mov [edi], al
+    inc esi
+    inc edi
+    jmp next_char
+
+End:
+    mov byte [edi], 0
+
+    mov eax, 4
+    mov ebx, 1
+    lea ecx, [answer]
+    mov edx, 100
+    int 0x80
+
+    mov eax, 4
+    mov ebx, 1
+    lea ecx, [newline]
+    mov edx, 1
+    int 0x80
+
+    mov eax, 1
+    xor ebx, ebx
+    int 0x80
