@@ -1,3 +1,7 @@
+/* MicroC Lexer - Generated: 2025-03-06 22:02:01 */
+
+=== MicroC Lexical Analysis Results ===
+
 <KEYWORD, integer, line 2>
 <IDENTIFIER, x, line 2>
 <PUNCTUATOR, ,, line 2>
@@ -41,14 +45,17 @@
 <IDENTIFIER, false, line 15>
 <PUNCTUATOR, ;, line 15>
 <UNRECOGNIZED_TOKEN, }, line 16>
-<IDENTIFIER, ch, line 20>
-<PUNCTUATOR, =, line 20>
-<CHARACTER_CONSTANT, 'A', line 20>
-<PUNCTUATOR, ;, line 20>
-<KEYWORD, const, line 21>
-<IDENTIFIER, string, line 21>
-<IDENTIFIER, msg, line 21>
-<PUNCTUATOR, =, line 21>
-<STRING_LITERAL, "Hello, World!", line 21>
-<PUNCTUATOR, ;, line 21>
-<KEYWORD, end, line 22>
+<IDENTIFIER, ch, line 22>
+<PUNCTUATOR, =, line 22>
+<CHARACTER_CONSTANT, 'A', line 22>
+<PUNCTUATOR, ;, line 22>
+<KEYWORD, const, line 23>
+<IDENTIFIER, string, line 23>
+<IDENTIFIER, msg, line 23>
+<PUNCTUATOR, =, line 23>
+<STRING_LITERAL, "Hello, World!", line 23>
+<PUNCTUATOR, ;, line 23>
+<KEYWORD, end, line 24>
+
+Lexical analysis complete.
+Total lines scanned: 23

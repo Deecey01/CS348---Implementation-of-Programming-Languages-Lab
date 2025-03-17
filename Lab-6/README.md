@@ -7,8 +7,7 @@
 - `a6_220101039_test.mc`: Test input file
 
 ## Building the Lexer
-1. Replace `<ROLL>` with your roll number in all files
-2. Run `make all` to build both iterative and non-iterative lexers
+1. Run `make all` to build both iterative and non-iterative lexers
 
 ## Running the Lexer
 - Iterative lexer: `./a6it_220101039 < a6_220101039_test.mc`
