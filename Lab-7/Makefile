@@ -4,9 +4,8 @@
 CC = gcc
 YACC = yacc
 LEX = lex
-CFLAGS = -Wall -g
+CFLAGS = -lfl
 
-# Get roll number from the current directory name
 ROLL = 220101039
 
 # Object files
@@ -44,7 +43,7 @@ clean:
 	rm -f microc $(OBJS) lex.yy.c y.tab.c y.tab.h output.txt
 
 # Create zip file for submission
-# zip: a7_$(ROLL).l a7_$(ROLL).y a7_$(ROLL)_test.mc Makefile
-# 	zip a7_$(ROLL).zip a7_$(ROLL).l a7_$(ROLL).y a7_$(ROLL)_test.mc Makefile
+zip: a7_$(ROLL).l a7_$(ROLL).y a7_$(ROLL)_test.mc Makefile README.md
+	zip a7_$(ROLL).zip a7_$(ROLL).l a7_$(ROLL).y a7_$(ROLL)_test.mc Makefile README.md
 
-# .PHONY: all clean test zip
+.PHONY: all clean test zip

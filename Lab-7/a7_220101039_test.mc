@@ -102,8 +102,6 @@ void testFunction(char* str)
 begin
     // Testing while and do
     integer count;
-    /*you
-    are dumb*/
     count = 0;
     while (count < 5)
         count = count + 1;

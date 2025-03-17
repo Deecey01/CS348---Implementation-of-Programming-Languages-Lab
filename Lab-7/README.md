@@ -13,6 +13,7 @@ This is an implementation of a parser for the micro C language as specified in t
 - `a7_220101039.y`: The Yacc specification for the parser
 - `a7_220101039_test.mc`: A test file containing micro C code
 - `Makefile`: File to automate the build process
+- `README.md`
 
 ## Building the Project
 
@@ -44,7 +45,7 @@ Or manually:
 ## Output
 
 The parser will output:
-1. Each grammar reduction as it happens
+1. Each grammar reduction as it happens in a separate file named `output.txt`
 2. A symbol table at the end of parsing
 3. Success or failure message
 

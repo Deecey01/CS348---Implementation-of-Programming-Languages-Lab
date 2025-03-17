@@ -7,29 +7,45 @@
 extern void yyerror(const char *);
 extern int line_no;
 
+struct symbol *symbol_table = NULL;
+
 /* Symbol table implementation */
 struct symbol {
     char *name;
-    int type;
+    char *type;     // char* to store type name
+    int *line_nos;  // Array of line numbers
+    int num_lines;  // Number of occurrences
+    int capacity;   // Capacity of line_nos array
     struct symbol *next;
 };
 
-struct symbol *symbol_table = NULL;
-
-void add_to_symbol_table(char *name, int type) {
+void add_to_symbol_table(char *name, char *token_type) {
     struct symbol *s = symbol_table;
     while (s != NULL) {
         if (strcmp(s->name, name) == 0) {
-            /* Symbol already exists */
+            // Symbol exists, add new line number
+            if (s->num_lines >= s->capacity) {
+                s->capacity *= 2;
+                s->line_nos = realloc(s->line_nos, s->capacity * sizeof(int));
+            }
+            // Check if line number already exists
+            for (int i = 0; i < s->num_lines; i++) {
+                if (s->line_nos[i] == line_no) return;
+            }
+            s->line_nos[s->num_lines++] = line_no;
             return;
         }
         s = s->next;
     }
     
-    /* Create new symbol */
+    // Create new symbol
     s = (struct symbol *) malloc(sizeof(struct symbol));
     s->name = strdup(name);
-    s->type = type;
+    s->type = strdup(token_type);  // Now directly using the passed token_type string
+    s->capacity = 10;
+    s->num_lines = 1;
+    s->line_nos = malloc(s->capacity * sizeof(int));
+    s->line_nos[0] = line_no;
     s->next = symbol_table;
     symbol_table = s;
 }
@@ -37,13 +53,18 @@ void add_to_symbol_table(char *name, int type) {
 void print_symbol_table() {
     struct symbol *s = symbol_table;
     printf("\n---- Symbol Table ----\n");
-    printf("%-20s %-10s\n", "Name", "Token Type");
-    printf("------------------------------\n");
+    printf("%-20s %-15s %-10s\n", "Name", "Token Type", "Line Numbers");
+    printf("----------------------------------------\n");
     while (s != NULL) {
-        printf("%-20s %-10d\n", s->name, s->type);
+        printf("%-20s %-15s ", s->name, s->type);
+        for (int i = 0; i < s->num_lines; i++) {
+            printf("%d", s->line_nos[i]);
+            if (i < s->num_lines - 1) printf(", ");
+        }
+        printf("\n");
         s = s->next;
     }
-    printf("------------------------------\n");
+    printf("----------------------------------------\n");
 }
 
 %}
@@ -58,8 +79,14 @@ integer     {nonzero}{digit}*|0
 float       {digit}+\.{digit}*([eE][+-]?{digit}+)?|{digit}*\.{digit}+([eE][+-]?{digit}+)?|{digit}+[eE][+-]?{digit}+
 string      \"([^\"\\\n]|\\['"?\\abfnrtv])*\"
 char_const  \'([^'\\\n]|\\['"?\\abfnrtv])\'
-comment     \/\/.*|\/\*([^*]|\*[^\/])*\*\/
-whitespace  [ \t\n\r\f\v]+
+    // comment     \/\/.*|\/\*([^*]|\*[^\/])*\*\/
+SINGLE_LINE_COMMENT_START \/\/
+SINGLE_LINE_COMMENT {SINGLE_LINE_COMMENT_START}.*
+
+MULTI_LINE_COMMENT_START \/\*
+MULTI_LINE_COMMENT_END \*\/
+MULTI_LINE_COMMENT {MULTI_LINE_COMMENT_START}([^*]|\*+[^*/])*\*+\/
+    // whitespace  [ \t\n\r\f\v]+
 
 %%
 
@@ -79,7 +106,7 @@ whitespace  [ \t\n\r\f\v]+
 "end"       { return END_BLOCK; }
 
 {identifier}    { 
-    add_to_symbol_table(yytext, IDENTIFIER);
+    add_to_symbol_table(yytext, "IDENTIFIER");
     yylval.sval = strdup(yytext); 
     return IDENTIFIER; 
 }
@@ -157,13 +184,17 @@ whitespace  [ \t\n\r\f\v]+
 "="     { return '='; }
 ","     { return ','; }
 
-{comment}       { /* Ignore comments */ }
-{whitespace}    { /* Ignore whitespace */ 
+{SINGLE_LINE_COMMENT}       { /* Ignore comments */ }
+{MULTI_LINE_COMMENT}    { /* Ignore whitespace */ 
     /* Count line numbers */
     for (int i = 0; i < yyleng; i++) {
         if (yytext[i] == '\n') line_no++;
     }
 }
+
+\n                          { line_no++; }
+
+[ \t\r]+                      { /* Ignore whitespace */ }
 
 .               { 
     /* Unrecognized character */
