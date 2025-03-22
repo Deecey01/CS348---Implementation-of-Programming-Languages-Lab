@@ -69,3 +69,31 @@ The parser implements all the features required in the assignment:
 - Grammar rules as specified
 - Symbol table generation
 - Printing of grammar reductions
+
+## Note
+
+Instead of using the "opt" term in case of optional expression in my grammar, the syntax is defined in 2 ways such that whenever the optional expression's condition is met, then only the optional term would be shown in the reduction otherwise it wont't be shown.
+```
+    example:
+    direct_declarator:
+    IDENTIFIER                                  
+    | IDENTIFIER '[' INTEGER_CONSTANT ']'       
+    | IDENTIFIER '(' parameter_list ')'         
+    | IDENTIFIER '(' ')'                        
+    ;
+```
+Here, "parameter-list" is an optional term but is defined in 2 ways.
+
+The necessary changes given in the mail are also incorporated in the grammar.
+```
+    function_declarator:
+    IDENTIFIER '(' parameter_list ')'         
+    | IDENTIFIER '(' ')'                        
+    ;
+
+    function_definition:
+    type_specifier function_declarator compound_statement                    
+    | type_specifier function_declarator declaration_list compound_statement 
+    ;
+
+```

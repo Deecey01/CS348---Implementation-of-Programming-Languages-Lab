@@ -320,21 +320,22 @@ enum yysymbol_kind_t
   YYSYMBOL_type_specifier = 72,            /* type_specifier  */
   YYSYMBOL_declarator = 73,                /* declarator  */
   YYSYMBOL_direct_declarator = 74,         /* direct_declarator  */
-  YYSYMBOL_pointer = 75,                   /* pointer  */
-  YYSYMBOL_parameter_list = 76,            /* parameter_list  */
-  YYSYMBOL_parameter_declaration = 77,     /* parameter_declaration  */
-  YYSYMBOL_initializer = 78,               /* initializer  */
-  YYSYMBOL_statement = 79,                 /* statement  */
-  YYSYMBOL_compound_statement = 80,        /* compound_statement  */
-  YYSYMBOL_block_item_list = 81,           /* block_item_list  */
-  YYSYMBOL_block_item = 82,                /* block_item  */
-  YYSYMBOL_expression_statement = 83,      /* expression_statement  */
-  YYSYMBOL_selection_statement = 84,       /* selection_statement  */
-  YYSYMBOL_iteration_statement = 85,       /* iteration_statement  */
-  YYSYMBOL_jump_statement = 86,            /* jump_statement  */
-  YYSYMBOL_translation_unit = 87,          /* translation_unit  */
-  YYSYMBOL_function_definition = 88,       /* function_definition  */
-  YYSYMBOL_declaration_list = 89           /* declaration_list  */
+  YYSYMBOL_function_declarator = 75,       /* function_declarator  */
+  YYSYMBOL_pointer = 76,                   /* pointer  */
+  YYSYMBOL_parameter_list = 77,            /* parameter_list  */
+  YYSYMBOL_parameter_declaration = 78,     /* parameter_declaration  */
+  YYSYMBOL_initializer = 79,               /* initializer  */
+  YYSYMBOL_statement = 80,                 /* statement  */
+  YYSYMBOL_compound_statement = 81,        /* compound_statement  */
+  YYSYMBOL_block_item_list = 82,           /* block_item_list  */
+  YYSYMBOL_block_item = 83,                /* block_item  */
+  YYSYMBOL_expression_statement = 84,      /* expression_statement  */
+  YYSYMBOL_selection_statement = 85,       /* selection_statement  */
+  YYSYMBOL_iteration_statement = 86,       /* iteration_statement  */
+  YYSYMBOL_jump_statement = 87,            /* jump_statement  */
+  YYSYMBOL_translation_unit = 88,          /* translation_unit  */
+  YYSYMBOL_function_definition = 89,       /* function_definition  */
+  YYSYMBOL_declaration_list = 90           /* declaration_list  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -660,18 +661,18 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  16
+#define YYFINAL  17
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   330
+#define YYLAST   318
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  56
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  34
+#define YYNNTS  35
 /* YYNRULES -- Number of rules.  */
 #define YYNRULES  95
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  167
+#define YYNSTATES  168
 
 /* YYMAXUTOK -- Last valid token kind.  */
 #define YYMAXUTOK   290
@@ -729,11 +730,11 @@ static const yytype_int16 yyrline[] =
      113,   117,   118,   119,   120,   124,   125,   126,   130,   131,
      132,   133,   134,   138,   139,   140,   144,   145,   149,   150,
      154,   155,   159,   160,   164,   169,   173,   174,   178,   179,
-     180,   181,   182,   186,   187,   191,   192,   193,   194,   198,
-     202,   203,   207,   208,   209,   210,   214,   219,   220,   221,
-     222,   223,   227,   228,   232,   233,   237,   238,   242,   243,
-     247,   248,   252,   253,   254,   255,   258,   259,   264,   265,
-     266,   267,   271,   272,   276,   277
+     180,   181,   182,   186,   187,   191,   192,   196,   197,   201,
+     205,   206,   210,   211,   212,   213,   217,   222,   223,   224,
+     225,   226,   230,   231,   235,   236,   240,   241,   245,   246,
+     250,   251,   255,   256,   257,   258,   261,   262,   267,   268,
+     269,   270,   274,   275,   279,   280
 };
 #endif
 
@@ -763,8 +764,9 @@ static const char *const yytname[] =
   "relational_expression", "equality_expression", "logical_and_expression",
   "logical_or_expression", "conditional_expression",
   "assignment_expression", "expression", "declaration", "init_declarator",
-  "type_specifier", "declarator", "direct_declarator", "pointer",
-  "parameter_list", "parameter_declaration", "initializer", "statement",
+  "type_specifier", "declarator", "direct_declarator",
+  "function_declarator", "pointer", "parameter_list",
+  "parameter_declaration", "initializer", "statement",
   "compound_statement", "block_item_list", "block_item",
   "expression_statement", "selection_statement", "iteration_statement",
   "jump_statement", "translation_unit", "function_definition",
@@ -778,7 +780,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-81)
+#define YYPACT_NINF (-100)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -792,23 +794,23 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int16 yypact[] =
 {
-     277,   -81,   -81,   -81,   -81,   -81,   -81,    -1,   153,   -81,
-     -37,   -81,   -24,   139,   -81,    16,   -81,   -81,   -81,    23,
-      24,   -81,   126,   278,   -81,    -1,   -81,   206,   -81,     2,
-     -81,    13,   -28,   -81,   -81,   -81,   -81,   -81,   -81,   198,
-       6,    33,    43,    39,   -81,   278,   278,   278,   278,   278,
-     278,   -81,   -81,    56,    64,   -21,    -3,   -10,    19,    67,
-      -2,   -81,   -81,    44,   -81,   -81,   -81,   179,   -81,   -81,
-     -81,   -81,   -81,   -81,   -81,    69,   -81,   -81,   -81,   -81,
-      97,   -81,   277,   -81,    48,   207,   278,   278,    92,   -81,
-     -81,   -81,   -81,   -81,    57,   110,   278,   260,   278,   278,
-     278,   278,   278,   278,   278,   278,   278,   278,   278,   278,
-     278,   278,   278,   -81,   -81,   -81,   -81,   -81,   -81,   207,
-      63,    65,    73,   -81,   -81,    66,   -81,    29,   -81,   -81,
-     -81,   -81,   -81,   -81,   -21,   -21,    -3,    -3,    -3,    -3,
-     -10,   -10,    19,    67,    91,   269,    39,    39,   278,   -81,
-     -81,   278,   278,    39,    74,   -81,   121,    99,   -81,   -81,
-     -81,    39,    39,    90,   -81,   -81,   -81
+     265,  -100,  -100,  -100,  -100,  -100,  -100,     6,    92,  -100,
+      28,  -100,   -42,    -2,  -100,   137,    47,  -100,  -100,  -100,
+      49,    14,  -100,   266,   123,  -100,     7,  -100,   137,    21,
+    -100,    26,  -100,     9,   -36,  -100,  -100,  -100,  -100,  -100,
+    -100,   266,   266,   266,   266,   266,   266,  -100,    -8,    48,
+      41,    -5,    -6,    16,    62,    56,  -100,  -100,  -100,    34,
+      35,    46,    55,   195,  -100,  -100,  -100,    45,  -100,  -100,
+    -100,   176,  -100,  -100,  -100,  -100,  -100,  -100,  -100,  -100,
+    -100,   107,  -100,   265,  -100,  -100,  -100,  -100,  -100,    69,
+     120,   266,   248,   266,   266,   266,   266,   266,   266,   266,
+     266,   266,   266,   266,   266,   266,   266,   266,  -100,    82,
+     114,   266,   266,   109,  -100,  -100,  -100,  -100,  -100,  -100,
+    -100,    91,  -100,    43,  -100,  -100,  -100,  -100,  -100,  -100,
+      41,    41,    -5,    -5,    -5,    -5,    -6,    -6,    16,    62,
+     110,  -100,   114,    97,    98,   100,  -100,  -100,   266,   266,
+     257,   195,   195,   266,  -100,  -100,   195,   108,  -100,   139,
+     117,  -100,   195,   195,   112,  -100,  -100,  -100
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -817,40 +819,40 @@ static const yytype_int16 yypact[] =
 static const yytype_int8 yydefact[] =
 {
        0,    48,    51,    50,    49,    52,    89,     0,     0,    88,
-      55,    59,     0,    46,    54,     0,     1,    91,    90,     0,
-       0,    45,     0,     0,    94,     0,    92,     0,    53,     0,
-      58,    64,     0,    60,     2,     3,     4,     5,     6,     0,
-       0,     0,     0,     0,    72,     0,     0,     0,     0,     0,
-       0,    78,     8,    15,    21,    25,    28,    33,    36,    38,
-      40,    42,    44,     0,    76,    77,    67,     0,    74,    68,
-      69,    70,    71,    66,    47,    46,    95,    93,    56,    62,
-      65,    57,     0,    86,     0,     0,     0,     0,     0,    18,
-      19,    17,    20,    16,     0,     0,     0,     0,     0,     0,
+      55,    59,     0,    46,    54,     0,     0,     1,    91,    90,
+       0,     0,    45,     0,     0,    94,     0,    92,     0,    55,
+      53,     0,    58,    64,     0,    60,     2,     3,     4,     5,
+       6,     0,     0,     0,     0,     0,     0,     8,    15,    21,
+      25,    28,    33,    36,    38,    40,    42,    66,    47,     0,
+       0,     0,     0,     0,    72,    78,    44,     0,    76,    77,
+      67,     0,    74,    68,    69,    70,    71,    95,    93,    56,
+      62,    65,    57,     0,    18,    19,    17,    20,    16,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,    79,    73,    75,    63,    61,    87,     0,
-       0,     0,     0,     7,    12,     0,    10,     0,    13,    43,
-      22,    23,    24,    21,    26,    27,    31,    32,    29,    30,
-      34,    35,    37,    39,     0,     0,     0,     0,     0,     9,
-      11,     0,     0,     0,     0,    84,    80,     0,    14,    41,
-      83,     0,     0,     0,    82,    81,    85
+       0,     0,     0,     0,     0,     0,     0,     0,    86,     0,
+       0,     0,     0,     0,    79,    73,    75,    63,    61,     7,
+      12,     0,    10,     0,    13,    43,    22,    23,    24,    21,
+      26,    27,    31,    32,    29,    30,    34,    35,    37,    39,
+       0,    87,     0,     0,     0,     0,     9,    11,     0,     0,
+       0,     0,     0,     0,    14,    41,     0,     0,    84,    80,
+       0,    83,     0,     0,     0,    82,    81,    85
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int16 yypgoto[] =
 {
-     -81,   -81,   -81,   -81,   -38,   -13,    17,   -16,    46,    47,
-     -81,     5,   -23,   -36,    88,   -81,     4,   129,   145,   130,
-     -81,    93,   -81,   -42,    -7,   -81,   103,   -80,   -81,   -81,
-     -81,   -81,   165,   -81
+    -100,  -100,  -100,  -100,   -40,    15,   105,    12,    67,    54,
+    -100,    24,   -23,   -39,    19,  -100,     8,  -100,   158,  -100,
+     143,  -100,    94,  -100,   -57,     0,  -100,   119,   -99,  -100,
+    -100,  -100,  -100,   187,  -100
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-       0,    52,    53,   127,    54,    55,    56,    57,    58,    59,
-      60,    61,    62,    63,    64,    12,    25,    13,    14,    15,
-      32,    33,    74,    65,    66,    67,    68,    69,    70,    71,
-      72,     8,     9,    27
+       0,    47,    48,   123,    49,    50,    51,    52,    53,    54,
+      55,    56,    66,    67,    68,    12,    26,    13,    14,    15,
+      16,    34,    35,    58,    69,    70,    71,    72,    73,    74,
+      75,    76,     8,     9,    28
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -858,101 +860,97 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_uint8 yytable[] =
 {
-      73,    88,    10,    84,     7,   119,    26,    89,    90,    91,
-      92,    93,     7,    19,    94,    20,    79,   104,   105,    10,
-      77,    99,   100,   101,    31,    81,    82,    29,   106,   107,
-     111,    21,   112,     1,     2,     3,     4,   102,   103,   145,
-       5,    11,    34,    35,    36,    37,    38,    39,   108,   109,
-     120,   121,    40,    78,    41,    11,    42,    43,    85,    22,
-     125,   130,   131,   132,   133,   133,   133,   133,   133,   133,
-     133,   133,   133,   133,   128,   129,   144,    30,    95,    45,
-      46,    47,   150,   151,    48,    86,    31,    49,     6,   134,
-     135,    50,   140,   141,    51,    87,    17,    98,   110,   113,
-     116,    24,    23,   118,   155,   156,    96,   122,    97,   154,
-     123,   160,   157,   124,   133,    76,   146,   149,   147,   164,
-     165,   136,   137,   138,   139,   148,   152,   161,   158,    34,
-      35,    36,    37,    38,    39,     1,     2,     3,     4,    40,
-     162,    41,     5,    42,    43,   166,    22,    44,     1,     2,
-       3,     4,   163,    16,    75,     5,   142,   159,   143,    22,
-      28,    80,     1,     2,     3,     4,    45,    46,    47,     5,
-     115,    48,    23,    18,    49,   117,     0,     0,    50,     0,
-       0,    51,    34,    35,    36,    37,    38,    39,     1,     2,
-       3,     4,    40,     0,    41,     5,    42,    43,     0,    22,
-     114,    34,    35,    36,    37,    38,     0,     0,     0,     0,
-      34,    35,    36,    37,    38,     1,     2,     3,     4,    45,
-      46,    47,     5,     0,    48,     0,    22,    49,     0,     0,
-       0,    50,     0,     0,    51,     0,     0,     0,    45,    46,
-      47,     0,     0,    48,     0,     0,    49,    45,    46,    47,
-      50,     0,    48,    83,     0,    49,     0,     0,     0,    50,
-       0,     0,    51,    34,    35,    36,    37,    38,     0,     0,
-       0,     0,    34,    35,    36,    37,    38,     0,     0,     0,
-       0,    34,    35,    36,    37,    38,     1,     2,     3,     4,
-       0,     0,     0,     5,     0,     0,     0,     0,     0,     0,
-      45,    46,    47,     0,     0,    48,     0,     0,    49,    45,
-      46,    47,    50,   126,    48,     0,     0,    49,    45,    46,
-      47,    50,   153,    48,     0,     0,    49,     0,     0,     0,
-      50
+      57,    84,    85,    86,    87,    88,   113,    89,     7,    10,
+      29,   142,    80,    22,    90,    27,     7,    82,    83,     6,
+     109,    99,   100,     1,     2,     3,     4,    18,    78,    33,
+       5,    23,   101,   102,    25,    97,    98,    36,    37,    38,
+      39,    40,    91,   150,    92,   103,   104,    77,    11,    11,
+      29,    11,   121,    31,   126,   127,   128,   129,   129,   129,
+     129,   129,   129,   129,   129,   129,   129,    32,   140,   124,
+     125,    20,   143,   144,    41,    42,    43,    79,    20,    44,
+      21,    93,    45,    94,    95,    96,    46,   110,   106,   108,
+     107,    33,    17,   105,   158,   159,   147,   148,   111,   161,
+     114,     1,     2,     3,     4,   165,   166,   112,     5,   129,
+     117,   157,   130,   131,   160,   136,   137,    36,    37,    38,
+      39,    40,   119,   120,   145,   154,    36,    37,    38,    39,
+      40,    59,     1,     2,     3,     4,    60,   141,    61,     5,
+      62,    63,   146,    24,    64,   149,     1,     2,     3,     4,
+     151,   152,   153,     5,    41,    42,    43,    24,   163,    44,
+     139,   162,    45,    41,    42,    43,    46,   167,    44,    65,
+     164,    45,   138,   155,    30,    46,    81,   118,    65,    36,
+      37,    38,    39,    40,    59,     1,     2,     3,     4,    60,
+     116,    61,     5,    62,    63,    19,    24,   115,    36,    37,
+      38,    39,    40,    59,   132,   133,   134,   135,    60,     0,
+      61,     0,    62,    63,     0,    24,    41,    42,    43,     0,
+       0,    44,     0,     0,    45,     0,     0,     0,    46,     0,
+       0,    65,     0,     0,     0,    41,    42,    43,     0,     0,
+      44,     0,     0,    45,     0,     0,     0,    46,     0,     0,
+      65,    36,    37,    38,    39,    40,     0,     0,     0,     0,
+      36,    37,    38,    39,    40,     0,     0,     0,     0,    36,
+      37,    38,    39,    40,     1,     2,     3,     4,     0,     0,
+       0,     5,     0,     0,     0,     0,     0,     0,    41,    42,
+      43,     0,     0,    44,     0,     0,    45,    41,    42,    43,
+      46,   122,    44,     0,     0,    45,    41,    42,    43,    46,
+     156,    44,     0,     0,    45,     0,     0,     0,    46
 };
 
 static const yytype_int16 yycheck[] =
 {
-      23,    43,     3,    39,     0,    85,    13,    45,    46,    47,
-      48,    49,     8,    50,    50,    52,     3,    27,    28,     3,
-      27,    42,    43,    44,    20,    53,    54,     4,    38,    39,
-      32,    55,    34,     9,    10,    11,    12,    40,    41,   119,
-      16,    42,     3,     4,     5,     6,     7,     8,    29,    30,
-      86,    87,    13,    51,    15,    42,    17,    18,    52,    20,
-      96,    99,   100,   101,   102,   103,   104,   105,   106,   107,
-     108,   109,   110,   111,    97,    98,   112,    53,    22,    40,
-      41,    42,    53,    54,    45,    52,    82,    48,     0,   102,
-     103,    52,   108,   109,    55,    52,     8,    33,    31,    55,
-       3,    13,    33,    55,   146,   147,    50,    15,    52,   145,
-      53,   153,   148,     3,   152,    27,    53,    51,    53,   161,
-     162,   104,   105,   106,   107,    52,    35,    53,   151,     3,
+      23,    41,    42,    43,    44,    45,    63,    46,     0,     3,
+       3,   110,     3,    55,    22,    15,     8,    53,    54,     0,
+      59,    27,    28,     9,    10,    11,    12,     8,    28,    21,
+      16,    33,    38,    39,    15,    40,    41,     3,     4,     5,
+       6,     7,    50,   142,    52,    29,    30,    28,    42,    42,
+       3,    42,    91,     4,    94,    95,    96,    97,    98,    99,
+     100,   101,   102,   103,   104,   105,   106,    53,   107,    92,
+      93,    50,   111,   112,    40,    41,    42,    51,    50,    45,
+      52,    33,    48,    42,    43,    44,    52,    52,    32,    55,
+      34,    83,     0,    31,   151,   152,    53,    54,    52,   156,
+      55,     9,    10,    11,    12,   162,   163,    52,    16,   149,
+       3,   150,    97,    98,   153,   103,   104,     3,     4,     5,
+       6,     7,    53,     3,    15,   148,     3,     4,     5,     6,
+       7,     8,     9,    10,    11,    12,    13,    55,    15,    16,
+      17,    18,    51,    20,    21,    35,     9,    10,    11,    12,
+      53,    53,    52,    16,    40,    41,    42,    20,    19,    45,
+     106,    53,    48,    40,    41,    42,    52,    55,    45,    55,
+      53,    48,   105,   149,    16,    52,    33,    83,    55,     3,
        4,     5,     6,     7,     8,     9,    10,    11,    12,    13,
-      19,    15,    16,    17,    18,    55,    20,    21,     9,    10,
-      11,    12,    53,     0,    25,    16,   110,   152,   111,    20,
-      15,    31,     9,    10,    11,    12,    40,    41,    42,    16,
-      67,    45,    33,     8,    48,    82,    -1,    -1,    52,    -1,
-      -1,    55,     3,     4,     5,     6,     7,     8,     9,    10,
-      11,    12,    13,    -1,    15,    16,    17,    18,    -1,    20,
-      21,     3,     4,     5,     6,     7,    -1,    -1,    -1,    -1,
-       3,     4,     5,     6,     7,     9,    10,    11,    12,    40,
-      41,    42,    16,    -1,    45,    -1,    20,    48,    -1,    -1,
-      -1,    52,    -1,    -1,    55,    -1,    -1,    -1,    40,    41,
+      71,    15,    16,    17,    18,     8,    20,    21,     3,     4,
+       5,     6,     7,     8,    99,   100,   101,   102,    13,    -1,
+      15,    -1,    17,    18,    -1,    20,    40,    41,    42,    -1,
+      -1,    45,    -1,    -1,    48,    -1,    -1,    -1,    52,    -1,
+      -1,    55,    -1,    -1,    -1,    40,    41,    42,    -1,    -1,
+      45,    -1,    -1,    48,    -1,    -1,    -1,    52,    -1,    -1,
+      55,     3,     4,     5,     6,     7,    -1,    -1,    -1,    -1,
+       3,     4,     5,     6,     7,    -1,    -1,    -1,    -1,     3,
+       4,     5,     6,     7,     9,    10,    11,    12,    -1,    -1,
+      -1,    16,    -1,    -1,    -1,    -1,    -1,    -1,    40,    41,
       42,    -1,    -1,    45,    -1,    -1,    48,    40,    41,    42,
-      52,    -1,    45,    55,    -1,    48,    -1,    -1,    -1,    52,
-      -1,    -1,    55,     3,     4,     5,     6,     7,    -1,    -1,
-      -1,    -1,     3,     4,     5,     6,     7,    -1,    -1,    -1,
-      -1,     3,     4,     5,     6,     7,     9,    10,    11,    12,
-      -1,    -1,    -1,    16,    -1,    -1,    -1,    -1,    -1,    -1,
-      40,    41,    42,    -1,    -1,    45,    -1,    -1,    48,    40,
-      41,    42,    52,    53,    45,    -1,    -1,    48,    40,    41,
-      42,    52,    53,    45,    -1,    -1,    48,    -1,    -1,    -1,
-      52
+      52,    53,    45,    -1,    -1,    48,    40,    41,    42,    52,
+      53,    45,    -1,    -1,    48,    -1,    -1,    -1,    52
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
    state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     9,    10,    11,    12,    16,    70,    72,    87,    88,
-       3,    42,    71,    73,    74,    75,     0,    70,    88,    50,
-      52,    55,    20,    33,    70,    72,    80,    89,    74,     4,
-      53,    72,    76,    77,     3,     4,     5,     6,     7,     8,
-      13,    15,    17,    18,    21,    40,    41,    42,    45,    48,
-      52,    55,    57,    58,    60,    61,    62,    63,    64,    65,
-      66,    67,    68,    69,    70,    79,    80,    81,    82,    83,
-      84,    85,    86,    68,    78,    73,    70,    80,    51,     3,
-      75,    53,    54,    55,    69,    52,    52,    52,    79,    60,
-      60,    60,    60,    60,    69,    22,    50,    52,    33,    42,
-      43,    44,    40,    41,    27,    28,    38,    39,    29,    30,
-      31,    32,    34,    55,    21,    82,     3,    77,    55,    83,
-      69,    69,    15,    53,     3,    69,    53,    59,    68,    68,
-      60,    60,    60,    60,    61,    61,    62,    62,    62,    62,
-      63,    63,    64,    65,    69,    83,    53,    53,    52,    51,
-      53,    54,    35,    53,    69,    79,    79,    69,    68,    67,
-      79,    53,    19,    53,    79,    79,    55
+       0,     9,    10,    11,    12,    16,    70,    72,    88,    89,
+       3,    42,    71,    73,    74,    75,    76,     0,    70,    89,
+      50,    52,    55,    33,    20,    70,    72,    81,    90,     3,
+      74,     4,    53,    72,    77,    78,     3,     4,     5,     6,
+       7,    40,    41,    42,    45,    48,    52,    57,    58,    60,
+      61,    62,    63,    64,    65,    66,    67,    68,    79,     8,
+      13,    15,    17,    18,    21,    55,    68,    69,    70,    80,
+      81,    82,    83,    84,    85,    86,    87,    70,    81,    51,
+       3,    76,    53,    54,    60,    60,    60,    60,    60,    69,
+      22,    50,    52,    33,    42,    43,    44,    40,    41,    27,
+      28,    38,    39,    29,    30,    31,    32,    34,    55,    69,
+      52,    52,    52,    80,    55,    21,    83,     3,    78,    53,
+       3,    69,    53,    59,    68,    68,    60,    60,    60,    60,
+      61,    61,    62,    62,    62,    62,    63,    63,    64,    65,
+      69,    55,    84,    69,    69,    15,    51,    53,    54,    35,
+      84,    53,    53,    52,    68,    67,    53,    69,    80,    80,
+      69,    80,    53,    19,    53,    80,    80,    55
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
@@ -963,11 +961,11 @@ static const yytype_int8 yyr1[] =
       60,    61,    61,    61,    61,    62,    62,    62,    63,    63,
       63,    63,    63,    64,    64,    64,    65,    65,    66,    66,
       67,    67,    68,    68,    69,    70,    71,    71,    72,    72,
-      72,    72,    72,    73,    73,    74,    74,    74,    74,    75,
-      76,    76,    77,    77,    77,    77,    78,    79,    79,    79,
-      79,    79,    80,    80,    81,    81,    82,    82,    83,    83,
-      84,    84,    85,    85,    85,    85,    86,    86,    87,    87,
-      87,    87,    88,    88,    89,    89
+      72,    72,    72,    73,    73,    74,    74,    75,    75,    76,
+      77,    77,    78,    78,    78,    78,    79,    80,    80,    80,
+      80,    80,    81,    81,    82,    82,    83,    83,    84,    84,
+      85,    85,    86,    86,    86,    86,    87,    87,    88,    88,
+      88,    88,    89,    89,    90,    90
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
@@ -1447,570 +1445,570 @@ yyreduce:
     {
   case 2: /* primary_expression: IDENTIFIER  */
 #line 86 "a7_220101039.y"
-                                { logging("primary_expression -> IDENTIFIER (An identifier reference)"); (yyval.sval) = (yyvsp[0].sval); }
-#line 1452 "y.tab.c"
+                                { logging("primary_expression --> IDENTIFIER (An identifier reference)"); (yyval.sval) = (yyvsp[0].sval); }
+#line 1450 "y.tab.c"
     break;
 
   case 3: /* primary_expression: INTEGER_CONSTANT  */
 #line 87 "a7_220101039.y"
-                                { logging("primary_expression -> INTEGER_CONSTANT (An integer literal)"); (yyval.sval) = "int_const"; }
-#line 1458 "y.tab.c"
+                                { logging("primary_expression --> INTEGER_CONSTANT (An integer literal)"); (yyval.sval) = "int_const"; }
+#line 1456 "y.tab.c"
     break;
 
   case 4: /* primary_expression: FLOATING_CONSTANT  */
 #line 88 "a7_220101039.y"
-                                { logging("primary_expression -> FLOATING_CONSTANT (A floating-point literal)"); (yyval.sval) = "float_const"; }
-#line 1464 "y.tab.c"
+                                { logging("primary_expression --> FLOATING_CONSTANT (A floating-point literal)"); (yyval.sval) = "float_const"; }
+#line 1462 "y.tab.c"
     break;
 
   case 5: /* primary_expression: CHARACTER_CONSTANT  */
 #line 89 "a7_220101039.y"
-                                { logging("primary_expression -> CHARACTER_CONSTANT (A character literal)"); (yyval.sval) = "char_const"; }
-#line 1470 "y.tab.c"
+                                { logging("primary_expression --> CHARACTER_CONSTANT (A character literal)"); (yyval.sval) = "char_const"; }
+#line 1468 "y.tab.c"
     break;
 
   case 6: /* primary_expression: STRING_LITERAL  */
 #line 90 "a7_220101039.y"
-                                { logging("primary_expression -> STRING_LITERAL (A string literal)"); (yyval.sval) = "string_literal"; }
-#line 1476 "y.tab.c"
+                                { logging("primary_expression --> STRING_LITERAL (A string literal)"); (yyval.sval) = "string_literal"; }
+#line 1474 "y.tab.c"
     break;
 
   case 7: /* primary_expression: '(' expression ')'  */
 #line 91 "a7_220101039.y"
-                                { logging("primary_expression -> ( expression ) (Expression in parentheses)"); (yyval.sval) = (yyvsp[-1].sval); }
-#line 1482 "y.tab.c"
+                                { logging("primary_expression --> ( expression ) (Expression in parentheses)"); (yyval.sval) = (yyvsp[-1].sval); }
+#line 1480 "y.tab.c"
     break;
 
   case 8: /* postfix_expression: primary_expression  */
 #line 95 "a7_220101039.y"
-                                                { logging("postfix_expression -> primary_expression (A simple expression)"); (yyval.sval) = (yyvsp[0].sval); }
-#line 1488 "y.tab.c"
+                                                { logging("postfix_expression --> primary_expression (A simple expression)"); (yyval.sval) = (yyvsp[0].sval); }
+#line 1486 "y.tab.c"
     break;
 
   case 9: /* postfix_expression: postfix_expression '[' expression ']'  */
 #line 96 "a7_220101039.y"
-                                                { logging("postfix_expression -> postfix_expression [ expression ] (Array access)"); (yyval.sval) = "array_access"; }
-#line 1494 "y.tab.c"
+                                                { logging("postfix_expression --> postfix_expression [ expression ] (Array access)"); (yyval.sval) = "array_access"; }
+#line 1492 "y.tab.c"
     break;
 
   case 10: /* postfix_expression: postfix_expression '(' ')'  */
 #line 97 "a7_220101039.y"
-                                                { logging("postfix_expression -> postfix_expression ( ) (Function call with no arguments)"); (yyval.sval) = "function_call"; }
-#line 1500 "y.tab.c"
+                                                { logging("postfix_expression --> postfix_expression ( ) (Function call with no arguments)"); (yyval.sval) = "function_call"; }
+#line 1498 "y.tab.c"
     break;
 
   case 11: /* postfix_expression: postfix_expression '(' argument_expression_list ')'  */
 #line 98 "a7_220101039.y"
-                                                          { logging("postfix_expression -> postfix_expression ( argument_expression_list ) (Function call with arguments)"); (yyval.sval) = "function_call_with_args"; }
-#line 1506 "y.tab.c"
+                                                          { logging("postfix_expression --> postfix_expression ( argument_expression_list ) (Function call with arguments)"); (yyval.sval) = "function_call_with_args"; }
+#line 1504 "y.tab.c"
     break;
 
   case 12: /* postfix_expression: postfix_expression ARROW IDENTIFIER  */
 #line 99 "a7_220101039.y"
-                                                { logging("postfix_expression -> postfix_expression -> IDENTIFIER (Pointer-to-member access)"); (yyval.sval) = "pointer_access"; }
-#line 1512 "y.tab.c"
+                                                { logging("postfix_expression --> postfix_expression --> IDENTIFIER (Pointer-to-member access)"); (yyval.sval) = "pointer_access"; }
+#line 1510 "y.tab.c"
     break;
 
   case 13: /* argument_expression_list: assignment_expression  */
 #line 103 "a7_220101039.y"
-                                                        { logging("argument_expression_list -> assignment_expression (First argument in function call)"); }
-#line 1518 "y.tab.c"
+                                                        { logging("argument_expression_list --> assignment_expression (First argument in function call)"); }
+#line 1516 "y.tab.c"
     break;
 
   case 14: /* argument_expression_list: argument_expression_list ',' assignment_expression  */
 #line 104 "a7_220101039.y"
-                                                         { logging("argument_expression_list -> argument_expression_list , assignment_expression (Additional argument in function call)"); }
-#line 1524 "y.tab.c"
+                                                         { logging("argument_expression_list --> argument_expression_list , assignment_expression (Additional argument in function call)"); }
+#line 1522 "y.tab.c"
     break;
 
   case 15: /* unary_expression: postfix_expression  */
 #line 108 "a7_220101039.y"
-                                        { logging("unary_expression -> postfix_expression (Expression without unary operator)"); (yyval.sval) = (yyvsp[0].sval); }
-#line 1530 "y.tab.c"
+                                        { logging("unary_expression --> postfix_expression (Expression without unary operator)"); (yyval.sval) = (yyvsp[0].sval); }
+#line 1528 "y.tab.c"
     break;
 
   case 16: /* unary_expression: '&' unary_expression  */
 #line 109 "a7_220101039.y"
-                                        { logging("unary_expression -> & unary_expression (Address-of operator)"); (yyval.sval) = "addr_of"; }
-#line 1536 "y.tab.c"
+                                        { logging("unary_expression --> & unary_expression (Address-of operator)"); (yyval.sval) = "addr_of"; }
+#line 1534 "y.tab.c"
     break;
 
   case 17: /* unary_expression: '*' unary_expression  */
 #line 110 "a7_220101039.y"
-                                        { logging("unary_expression -> * unary_expression (Dereference operator)"); (yyval.sval) = "deref"; }
-#line 1542 "y.tab.c"
+                                        { logging("unary_expression --> * unary_expression (Dereference operator)"); (yyval.sval) = "deref"; }
+#line 1540 "y.tab.c"
     break;
 
   case 18: /* unary_expression: '+' unary_expression  */
 #line 111 "a7_220101039.y"
-                                        { logging("unary_expression -> + unary_expression (Unary plus operator)"); (yyval.sval) = "uplus"; }
-#line 1548 "y.tab.c"
+                                        { logging("unary_expression --> + unary_expression (Unary plus operator)"); (yyval.sval) = "uplus"; }
+#line 1546 "y.tab.c"
     break;
 
   case 19: /* unary_expression: '-' unary_expression  */
 #line 112 "a7_220101039.y"
-                                        { logging("unary_expression -> - unary_expression (Unary minus operator)"); (yyval.sval) = "uminus"; }
-#line 1554 "y.tab.c"
+                                        { logging("unary_expression --> - unary_expression (Unary minus operator)"); (yyval.sval) = "uminus"; }
+#line 1552 "y.tab.c"
     break;
 
   case 20: /* unary_expression: '!' unary_expression  */
 #line 113 "a7_220101039.y"
-                                        { logging("unary_expression -> ! unary_expression (Logical NOT operator)"); (yyval.sval) = "not"; }
-#line 1560 "y.tab.c"
+                                        { logging("unary_expression --> ! unary_expression (Logical NOT operator)"); (yyval.sval) = "not"; }
+#line 1558 "y.tab.c"
     break;
 
   case 21: /* multiplicative_expression: unary_expression  */
 #line 117 "a7_220101039.y"
-                                                      { logging("multiplicative_expression -> unary_expression (Expression without multiplication)"); (yyval.sval) = (yyvsp[0].sval); }
-#line 1566 "y.tab.c"
+                                                      { logging("multiplicative_expression --> unary_expression (Expression without multiplication)"); (yyval.sval) = (yyvsp[0].sval); }
+#line 1564 "y.tab.c"
     break;
 
   case 22: /* multiplicative_expression: multiplicative_expression '*' unary_expression  */
 #line 118 "a7_220101039.y"
-                                                      { logging("multiplicative_expression -> multiplicative_expression * unary_expression (Multiplication operation)"); (yyval.sval) = "mult"; }
-#line 1572 "y.tab.c"
+                                                      { logging("multiplicative_expression --> multiplicative_expression * unary_expression (Multiplication operation)"); (yyval.sval) = "mult"; }
+#line 1570 "y.tab.c"
     break;
 
   case 23: /* multiplicative_expression: multiplicative_expression '/' unary_expression  */
 #line 119 "a7_220101039.y"
-                                                      { logging("multiplicative_expression -> multiplicative_expression / unary_expression (Division operation)"); (yyval.sval) = "div"; }
-#line 1578 "y.tab.c"
+                                                      { logging("multiplicative_expression --> multiplicative_expression / unary_expression (Division operation)"); (yyval.sval) = "div"; }
+#line 1576 "y.tab.c"
     break;
 
   case 24: /* multiplicative_expression: multiplicative_expression '%' unary_expression  */
 #line 120 "a7_220101039.y"
-                                                      { logging("multiplicative_expression -> multiplicative_expression % unary_expression (Modulo operation)"); (yyval.sval) = "mod"; }
-#line 1584 "y.tab.c"
+                                                      { logging("multiplicative_expression --> multiplicative_expression % unary_expression (Modulo operation)"); (yyval.sval) = "mod"; }
+#line 1582 "y.tab.c"
     break;
 
   case 25: /* additive_expression: multiplicative_expression  */
 #line 124 "a7_220101039.y"
-                                                            { logging("additive_expression -> multiplicative_expression (Expression without addition/subtraction)"); (yyval.sval) = (yyvsp[0].sval); }
-#line 1590 "y.tab.c"
+                                                            { logging("additive_expression --> multiplicative_expression (Expression without addition/subtraction)"); (yyval.sval) = (yyvsp[0].sval); }
+#line 1588 "y.tab.c"
     break;
 
   case 26: /* additive_expression: additive_expression '+' multiplicative_expression  */
 #line 125 "a7_220101039.y"
-                                                            { logging("additive_expression -> additive_expression + multiplicative_expression (Addition operation)"); (yyval.sval) = "add"; }
-#line 1596 "y.tab.c"
+                                                            { logging("additive_expression --> additive_expression + multiplicative_expression (Addition operation)"); (yyval.sval) = "add"; }
+#line 1594 "y.tab.c"
     break;
 
   case 27: /* additive_expression: additive_expression '-' multiplicative_expression  */
 #line 126 "a7_220101039.y"
-                                                            { logging("additive_expression -> additive_expression - multiplicative_expression (Subtraction operation)"); (yyval.sval) = "sub"; }
-#line 1602 "y.tab.c"
+                                                            { logging("additive_expression --> additive_expression - multiplicative_expression (Subtraction operation)"); (yyval.sval) = "sub"; }
+#line 1600 "y.tab.c"
     break;
 
   case 28: /* relational_expression: additive_expression  */
 #line 130 "a7_220101039.y"
-                                                         { logging("relational_expression -> additive_expression (Expression without comparison)"); (yyval.sval) = (yyvsp[0].sval); }
-#line 1608 "y.tab.c"
+                                                         { logging("relational_expression --> additive_expression (Expression without comparison)"); (yyval.sval) = (yyvsp[0].sval); }
+#line 1606 "y.tab.c"
     break;
 
   case 29: /* relational_expression: relational_expression '<' additive_expression  */
 #line 131 "a7_220101039.y"
-                                                         { logging("relational_expression -> relational_expression < additive_expression (Less than comparison)"); (yyval.sval) = "lt"; }
-#line 1614 "y.tab.c"
+                                                         { logging("relational_expression --> relational_expression < additive_expression (Less than comparison)"); (yyval.sval) = "lt"; }
+#line 1612 "y.tab.c"
     break;
 
   case 30: /* relational_expression: relational_expression '>' additive_expression  */
 #line 132 "a7_220101039.y"
-                                                         { logging("relational_expression -> relational_expression > additive_expression (Greater than comparison)"); (yyval.sval) = "gt"; }
-#line 1620 "y.tab.c"
+                                                         { logging("relational_expression --> relational_expression > additive_expression (Greater than comparison)"); (yyval.sval) = "gt"; }
+#line 1618 "y.tab.c"
     break;
 
   case 31: /* relational_expression: relational_expression LE_OP additive_expression  */
 #line 133 "a7_220101039.y"
-                                                         { logging("relational_expression -> relational_expression <= additive_expression (Less than or equal comparison)"); (yyval.sval) = "le"; }
-#line 1626 "y.tab.c"
+                                                         { logging("relational_expression --> relational_expression <= additive_expression (Less than or equal comparison)"); (yyval.sval) = "le"; }
+#line 1624 "y.tab.c"
     break;
 
   case 32: /* relational_expression: relational_expression GE_OP additive_expression  */
 #line 134 "a7_220101039.y"
-                                                         { logging("relational_expression -> relational_expression >= additive_expression (Greater than or equal comparison)"); (yyval.sval) = "ge"; }
-#line 1632 "y.tab.c"
+                                                         { logging("relational_expression --> relational_expression >= additive_expression (Greater than or equal comparison)"); (yyval.sval) = "ge"; }
+#line 1630 "y.tab.c"
     break;
 
   case 33: /* equality_expression: relational_expression  */
 #line 138 "a7_220101039.y"
-                                                         { logging("equality_expression -> relational_expression (Expression without equality check)"); (yyval.sval) = (yyvsp[0].sval); }
-#line 1638 "y.tab.c"
+                                                         { logging("equality_expression --> relational_expression (Expression without equality check)"); (yyval.sval) = (yyvsp[0].sval); }
+#line 1636 "y.tab.c"
     break;
 
   case 34: /* equality_expression: equality_expression EQ_OP relational_expression  */
 #line 139 "a7_220101039.y"
-                                                         { logging("equality_expression -> equality_expression == relational_expression (Equality comparison)"); (yyval.sval) = "eq"; }
-#line 1644 "y.tab.c"
+                                                         { logging("equality_expression --> equality_expression == relational_expression (Equality comparison)"); (yyval.sval) = "eq"; }
+#line 1642 "y.tab.c"
     break;
 
   case 35: /* equality_expression: equality_expression NE_OP relational_expression  */
 #line 140 "a7_220101039.y"
-                                                         { logging("equality_expression -> equality_expression != relational_expression (Inequality comparison)"); (yyval.sval) = "ne"; }
-#line 1650 "y.tab.c"
+                                                         { logging("equality_expression --> equality_expression != relational_expression (Inequality comparison)"); (yyval.sval) = "ne"; }
+#line 1648 "y.tab.c"
     break;
 
   case 36: /* logical_and_expression: equality_expression  */
 #line 144 "a7_220101039.y"
-                                                          { logging("logical_and_expression -> equality_expression (Expression without logical AND)"); (yyval.sval) = (yyvsp[0].sval); }
-#line 1656 "y.tab.c"
+                                                          { logging("logical_and_expression --> equality_expression (Expression without logical AND)"); (yyval.sval) = (yyvsp[0].sval); }
+#line 1654 "y.tab.c"
     break;
 
   case 37: /* logical_and_expression: logical_and_expression AND_OP equality_expression  */
 #line 145 "a7_220101039.y"
-                                                          { logging("logical_and_expression -> logical_and_expression && equality_expression (Logical AND operation)"); (yyval.sval) = "and"; }
-#line 1662 "y.tab.c"
+                                                          { logging("logical_and_expression --> logical_and_expression && equality_expression (Logical AND operation)"); (yyval.sval) = "and"; }
+#line 1660 "y.tab.c"
     break;
 
   case 38: /* logical_or_expression: logical_and_expression  */
 #line 149 "a7_220101039.y"
-                                                            { logging("logical_or_expression -> logical_and_expression (Expression without logical OR)"); (yyval.sval) = (yyvsp[0].sval); }
-#line 1668 "y.tab.c"
+                                                            { logging("logical_or_expression --> logical_and_expression (Expression without logical OR)"); (yyval.sval) = (yyvsp[0].sval); }
+#line 1666 "y.tab.c"
     break;
 
   case 39: /* logical_or_expression: logical_or_expression OR_OP logical_and_expression  */
 #line 150 "a7_220101039.y"
-                                                            { logging("logical_or_expression -> logical_or_expression || logical_and_expression (Logical OR operation)"); (yyval.sval) = "or"; }
-#line 1674 "y.tab.c"
+                                                            { logging("logical_or_expression --> logical_or_expression || logical_and_expression (Logical OR operation)"); (yyval.sval) = "or"; }
+#line 1672 "y.tab.c"
     break;
 
   case 40: /* conditional_expression: logical_or_expression  */
 #line 154 "a7_220101039.y"
-                                                                            { logging("conditional_expression -> logical_or_expression (Expression without conditional operator)"); (yyval.sval) = (yyvsp[0].sval); }
-#line 1680 "y.tab.c"
+                                                                            { logging("conditional_expression --> logical_or_expression (Expression without conditional operator)"); (yyval.sval) = (yyvsp[0].sval); }
+#line 1678 "y.tab.c"
     break;
 
   case 41: /* conditional_expression: logical_or_expression '?' expression ':' conditional_expression  */
 #line 155 "a7_220101039.y"
-                                                                            { logging("conditional_expression -> logical_or_expression ? expression : conditional_expression (Conditional/ternary operation)"); (yyval.sval) = "cond"; }
-#line 1686 "y.tab.c"
+                                                                            { logging("conditional_expression --> logical_or_expression ? expression : conditional_expression (Conditional/ternary operation)"); (yyval.sval) = "cond"; }
+#line 1684 "y.tab.c"
     break;
 
   case 42: /* assignment_expression: conditional_expression  */
 #line 159 "a7_220101039.y"
-                                                          { logging("assignment_expression -> conditional_expression (Expression without assignment)"); (yyval.sval) = (yyvsp[0].sval); }
-#line 1692 "y.tab.c"
+                                                          { logging("assignment_expression --> conditional_expression (Expression without assignment)"); (yyval.sval) = (yyvsp[0].sval); }
+#line 1690 "y.tab.c"
     break;
 
   case 43: /* assignment_expression: unary_expression '=' assignment_expression  */
 #line 160 "a7_220101039.y"
-                                                          { logging("assignment_expression -> unary_expression = assignment_expression (Assignment operation)"); (yyval.sval) = "assign"; }
-#line 1698 "y.tab.c"
+                                                          { logging("assignment_expression --> unary_expression = assignment_expression (Assignment operation)"); (yyval.sval) = "assign"; }
+#line 1696 "y.tab.c"
     break;
 
   case 44: /* expression: assignment_expression  */
 #line 164 "a7_220101039.y"
-                             { logging("expression -> assignment_expression (Complete expression)"); (yyval.sval) = (yyvsp[0].sval); }
-#line 1704 "y.tab.c"
+                             { logging("expression --> assignment_expression (Complete expression)"); (yyval.sval) = (yyvsp[0].sval); }
+#line 1702 "y.tab.c"
     break;
 
   case 45: /* declaration: type_specifier init_declarator ';'  */
 #line 169 "a7_220101039.y"
-                                          { logging("declaration -> type_specifier init_declarator ; (Variable or function declaration)"); }
-#line 1710 "y.tab.c"
+                                          { logging("declaration --> type_specifier init_declarator ; (Variable or function declaration)"); }
+#line 1708 "y.tab.c"
     break;
 
   case 46: /* init_declarator: declarator  */
 #line 173 "a7_220101039.y"
-                                    { logging("init_declarator -> declarator (Declaration without initialization)"); }
-#line 1716 "y.tab.c"
+                                    { logging("init_declarator --> declarator (Declaration without initialization)"); }
+#line 1714 "y.tab.c"
     break;
 
   case 47: /* init_declarator: declarator '=' initializer  */
 #line 174 "a7_220101039.y"
-                                    { logging("init_declarator -> declarator = initializer (Declaration with initialization)"); }
-#line 1722 "y.tab.c"
+                                    { logging("init_declarator --> declarator = initializer (Declaration with initialization)"); }
+#line 1720 "y.tab.c"
     break;
 
   case 48: /* type_specifier: VOID  */
 #line 178 "a7_220101039.y"
-                { logging("type_specifier -> void (Void type)"); (yyval.sval) = "void"; }
-#line 1728 "y.tab.c"
+                { logging("type_specifier --> void (Void type)"); (yyval.sval) = "void"; }
+#line 1726 "y.tab.c"
     break;
 
   case 49: /* type_specifier: CHAR  */
 #line 179 "a7_220101039.y"
-                { logging("type_specifier -> char (Character type)"); (yyval.sval) = "char"; }
-#line 1734 "y.tab.c"
+                { logging("type_specifier --> char (Character type)"); (yyval.sval) = "char"; }
+#line 1732 "y.tab.c"
     break;
 
   case 50: /* type_specifier: INTEGER  */
 #line 180 "a7_220101039.y"
-                { logging("type_specifier -> integer (Integer type)"); (yyval.sval) = "integer"; }
-#line 1740 "y.tab.c"
+                { logging("type_specifier --> integer (Integer type)"); (yyval.sval) = "integer"; }
+#line 1738 "y.tab.c"
     break;
 
   case 51: /* type_specifier: FLOAT  */
 #line 181 "a7_220101039.y"
-                { logging("type_specifier -> float (Float type)"); (yyval.sval) = "float"; }
-#line 1746 "y.tab.c"
+                { logging("type_specifier --> float (Float type)"); (yyval.sval) = "float"; }
+#line 1744 "y.tab.c"
     break;
 
   case 52: /* type_specifier: BOOL  */
 #line 182 "a7_220101039.y"
-                { logging("type_specifier -> bool (Boolean type)"); (yyval.sval) = "bool"; }
-#line 1752 "y.tab.c"
+                { logging("type_specifier --> bool (Boolean type)"); (yyval.sval) = "bool"; }
+#line 1750 "y.tab.c"
     break;
 
   case 53: /* declarator: pointer direct_declarator  */
 #line 186 "a7_220101039.y"
-                                 { logging("declarator -> pointer direct_declarator (Pointer declarator)"); }
-#line 1758 "y.tab.c"
+                                 { logging("declarator --> pointer direct_declarator (Pointer declarator)"); }
+#line 1756 "y.tab.c"
     break;
 
   case 54: /* declarator: direct_declarator  */
 #line 187 "a7_220101039.y"
-                                 { logging("declarator -> direct_declarator (Non-pointer declarator)"); }
-#line 1764 "y.tab.c"
+                                 { logging("declarator --> direct_declarator (Non-pointer declarator)"); }
+#line 1762 "y.tab.c"
     break;
 
   case 55: /* direct_declarator: IDENTIFIER  */
 #line 191 "a7_220101039.y"
-                                                { logging("direct_declarator -> IDENTIFIER (Simple identifier)"); }
-#line 1770 "y.tab.c"
+                                                { logging("direct_declarator --> IDENTIFIER (Simple identifier)"); }
+#line 1768 "y.tab.c"
     break;
 
   case 56: /* direct_declarator: IDENTIFIER '[' INTEGER_CONSTANT ']'  */
 #line 192 "a7_220101039.y"
-                                                { logging("direct_declarator -> IDENTIFIER [ INTEGER_CONSTANT ] (Array declarator)"); }
-#line 1776 "y.tab.c"
+                                                { logging("direct_declarator --> IDENTIFIER [ INTEGER_CONSTANT ] (Array declarator)"); }
+#line 1774 "y.tab.c"
     break;
 
-  case 57: /* direct_declarator: IDENTIFIER '(' parameter_list ')'  */
-#line 193 "a7_220101039.y"
-                                                { logging("direct_declarator -> IDENTIFIER ( parameter_list ) (Function declarator with parameters)"); }
-#line 1782 "y.tab.c"
+  case 57: /* function_declarator: IDENTIFIER '(' parameter_list ')'  */
+#line 196 "a7_220101039.y"
+                                              { logging("function_declarator --> IDENTIFIER ( parameter_list ) (Function declarator with parameters)"); }
+#line 1780 "y.tab.c"
     break;
 
-  case 58: /* direct_declarator: IDENTIFIER '(' ')'  */
-#line 194 "a7_220101039.y"
-                                                { logging("direct_declarator -> IDENTIFIER ( ) (Function declarator without parameters)"); }
-#line 1788 "y.tab.c"
+  case 58: /* function_declarator: IDENTIFIER '(' ')'  */
+#line 197 "a7_220101039.y"
+                                                { logging("function_declarator --> IDENTIFIER ( ) (Function declarator without parameters)"); }
+#line 1786 "y.tab.c"
     break;
 
   case 59: /* pointer: '*'  */
-#line 198 "a7_220101039.y"
-           { logging("pointer -> * (Pointer symbol)"); }
-#line 1794 "y.tab.c"
+#line 201 "a7_220101039.y"
+           { logging("pointer --> * (Pointer symbol)"); }
+#line 1792 "y.tab.c"
     break;
 
   case 60: /* parameter_list: parameter_declaration  */
-#line 202 "a7_220101039.y"
-                                                 { logging("parameter_list -> parameter_declaration (First parameter in function)"); }
-#line 1800 "y.tab.c"
+#line 205 "a7_220101039.y"
+                                                 { logging("parameter_list --> parameter_declaration (First parameter in function)"); }
+#line 1798 "y.tab.c"
     break;
 
   case 61: /* parameter_list: parameter_list ',' parameter_declaration  */
-#line 203 "a7_220101039.y"
-                                                 { logging("parameter_list -> parameter_list , parameter_declaration (Additional parameter in function)"); }
-#line 1806 "y.tab.c"
+#line 206 "a7_220101039.y"
+                                                 { logging("parameter_list --> parameter_list , parameter_declaration (Additional parameter in function)"); }
+#line 1804 "y.tab.c"
     break;
 
   case 62: /* parameter_declaration: type_specifier IDENTIFIER  */
-#line 207 "a7_220101039.y"
-                                       { logging("parameter_declaration -> type_specifier IDENTIFIER (Parameter with type and name)"); }
-#line 1812 "y.tab.c"
+#line 210 "a7_220101039.y"
+                                       { logging("parameter_declaration --> type_specifier IDENTIFIER (Parameter with type and name)"); }
+#line 1810 "y.tab.c"
     break;
 
   case 63: /* parameter_declaration: type_specifier pointer IDENTIFIER  */
-#line 208 "a7_220101039.y"
-                                        { logging("parameter_declaration -> type_specifier pointer IDENTIFIER (Pointer parameter with type and name)"); }
-#line 1818 "y.tab.c"
+#line 211 "a7_220101039.y"
+                                        { logging("parameter_declaration --> type_specifier pointer IDENTIFIER (Pointer parameter with type and name)"); }
+#line 1816 "y.tab.c"
     break;
 
   case 64: /* parameter_declaration: type_specifier  */
-#line 209 "a7_220101039.y"
-                                       { logging("parameter_declaration -> type_specifier (Parameter with type only)"); }
-#line 1824 "y.tab.c"
+#line 212 "a7_220101039.y"
+                                       { logging("parameter_declaration --> type_specifier (Parameter with type only)"); }
+#line 1822 "y.tab.c"
     break;
 
   case 65: /* parameter_declaration: type_specifier pointer  */
-#line 210 "a7_220101039.y"
-                                       { logging("parameter_declaration -> type_specifier pointer (Pointer parameter with type only)"); }
-#line 1830 "y.tab.c"
+#line 213 "a7_220101039.y"
+                                       { logging("parameter_declaration --> type_specifier pointer (Pointer parameter with type only)"); }
+#line 1828 "y.tab.c"
     break;
 
   case 66: /* initializer: assignment_expression  */
-#line 214 "a7_220101039.y"
-                             { logging("initializer -> assignment_expression (Initializer expression)"); }
-#line 1836 "y.tab.c"
+#line 217 "a7_220101039.y"
+                             { logging("initializer --> assignment_expression (Initializer expression)"); }
+#line 1834 "y.tab.c"
     break;
 
   case 67: /* statement: compound_statement  */
-#line 219 "a7_220101039.y"
-                             { logging("statement -> compound_statement (Block statement)"); }
-#line 1842 "y.tab.c"
+#line 222 "a7_220101039.y"
+                             { logging("statement --> compound_statement (Block statement)"); }
+#line 1840 "y.tab.c"
     break;
 
   case 68: /* statement: expression_statement  */
-#line 220 "a7_220101039.y"
-                             { logging("statement -> expression_statement (Expression statement)"); }
-#line 1848 "y.tab.c"
+#line 223 "a7_220101039.y"
+                             { logging("statement --> expression_statement (Expression statement)"); }
+#line 1846 "y.tab.c"
     break;
 
   case 69: /* statement: selection_statement  */
-#line 221 "a7_220101039.y"
-                             { logging("statement -> selection_statement (Selection/if statement)"); }
-#line 1854 "y.tab.c"
+#line 224 "a7_220101039.y"
+                             { logging("statement --> selection_statement (Selection/if statement)"); }
+#line 1852 "y.tab.c"
     break;
 
   case 70: /* statement: iteration_statement  */
-#line 222 "a7_220101039.y"
-                             { logging("statement -> iteration_statement (Loop statement)"); }
-#line 1860 "y.tab.c"
+#line 225 "a7_220101039.y"
+                             { logging("statement --> iteration_statement (Loop statement)"); }
+#line 1858 "y.tab.c"
     break;
 
   case 71: /* statement: jump_statement  */
-#line 223 "a7_220101039.y"
-                             { logging("statement -> jump_statement (Jump/return statement)"); }
-#line 1866 "y.tab.c"
+#line 226 "a7_220101039.y"
+                             { logging("statement --> jump_statement (Jump/return statement)"); }
+#line 1864 "y.tab.c"
     break;
 
   case 72: /* compound_statement: BEGIN_BLOCK END_BLOCK  */
-#line 227 "a7_220101039.y"
-                                             { logging("compound_statement -> begin end (Empty block)"); }
-#line 1872 "y.tab.c"
+#line 230 "a7_220101039.y"
+                                             { logging("compound_statement --> begin end (Empty block)"); }
+#line 1870 "y.tab.c"
     break;
 
   case 73: /* compound_statement: BEGIN_BLOCK block_item_list END_BLOCK  */
-#line 228 "a7_220101039.y"
-                                             { logging("compound_statement -> begin block_item_list end (Block with items)"); }
-#line 1878 "y.tab.c"
+#line 231 "a7_220101039.y"
+                                             { logging("compound_statement --> begin block_item_list end (Block with items)"); }
+#line 1876 "y.tab.c"
     break;
 
   case 74: /* block_item_list: block_item  */
-#line 232 "a7_220101039.y"
-                                   { logging("block_item_list -> block_item (First item in block)"); }
-#line 1884 "y.tab.c"
+#line 235 "a7_220101039.y"
+                                   { logging("block_item_list --> block_item (First item in block)"); }
+#line 1882 "y.tab.c"
     break;
 
   case 75: /* block_item_list: block_item_list block_item  */
-#line 233 "a7_220101039.y"
-                                   { logging("block_item_list -> block_item_list block_item (Additional item in block)"); }
-#line 1890 "y.tab.c"
+#line 236 "a7_220101039.y"
+                                   { logging("block_item_list --> block_item_list block_item (Additional item in block)"); }
+#line 1888 "y.tab.c"
     break;
 
   case 76: /* block_item: declaration  */
-#line 237 "a7_220101039.y"
-                   { logging("block_item -> declaration (Declaration in block)"); }
-#line 1896 "y.tab.c"
+#line 240 "a7_220101039.y"
+                   { logging("block_item --> declaration (Declaration in block)"); }
+#line 1894 "y.tab.c"
     break;
 
   case 77: /* block_item: statement  */
-#line 238 "a7_220101039.y"
-                   { logging("block_item -> statement (Statement in block)"); }
-#line 1902 "y.tab.c"
+#line 241 "a7_220101039.y"
+                   { logging("block_item --> statement (Statement in block)"); }
+#line 1900 "y.tab.c"
     break;
 
   case 78: /* expression_statement: ';'  */
-#line 242 "a7_220101039.y"
-                    { logging("expression_statement -> ; (Empty statement)"); }
-#line 1908 "y.tab.c"
+#line 245 "a7_220101039.y"
+                    { logging("expression_statement --> ; (Empty statement)"); }
+#line 1906 "y.tab.c"
     break;
 
   case 79: /* expression_statement: expression ';'  */
-#line 243 "a7_220101039.y"
-                     { logging("expression_statement -> expression ; (Expression statement)"); }
-#line 1914 "y.tab.c"
+#line 246 "a7_220101039.y"
+                     { logging("expression_statement --> expression ; (Expression statement)"); }
+#line 1912 "y.tab.c"
     break;
 
   case 80: /* selection_statement: IF '(' expression ')' statement  */
-#line 247 "a7_220101039.y"
-                                                       { logging("selection_statement -> if ( expression ) statement (If statement)"); }
-#line 1920 "y.tab.c"
+#line 250 "a7_220101039.y"
+                                                       { logging("selection_statement --> if ( expression ) statement (If statement)"); }
+#line 1918 "y.tab.c"
     break;
 
   case 81: /* selection_statement: IF '(' expression ')' statement ELSE statement  */
-#line 248 "a7_220101039.y"
-                                                       { logging("selection_statement -> if ( expression ) statement else statement (If-else statement)"); }
-#line 1926 "y.tab.c"
+#line 251 "a7_220101039.y"
+                                                       { logging("selection_statement --> if ( expression ) statement else statement (If-else statement)"); }
+#line 1924 "y.tab.c"
     break;
 
   case 82: /* iteration_statement: FOR '(' expression_statement expression_statement expression ')' statement  */
-#line 252 "a7_220101039.y"
-                                                                                  { logging("iteration_statement -> for ( expression_statement expression_statement expression ) statement (For loop with update)"); }
-#line 1932 "y.tab.c"
+#line 255 "a7_220101039.y"
+                                                                                  { logging("iteration_statement --> for ( expression_statement expression_statement expression ) statement (For loop with update)"); }
+#line 1930 "y.tab.c"
     break;
 
   case 83: /* iteration_statement: FOR '(' expression_statement expression_statement ')' statement  */
-#line 253 "a7_220101039.y"
-                                                                                  { logging("iteration_statement -> for ( expression_statement expression_statement ) statement (For loop without update)"); }
-#line 1938 "y.tab.c"
+#line 256 "a7_220101039.y"
+                                                                                  { logging("iteration_statement --> for ( expression_statement expression_statement ) statement (For loop without update)"); }
+#line 1936 "y.tab.c"
     break;
 
   case 84: /* iteration_statement: WHILE '(' expression ')' statement  */
-#line 254 "a7_220101039.y"
-                                                                                 { logging("iteration_statement -> while ( expression ) statement (While loop)"); }
-#line 1944 "y.tab.c"
+#line 257 "a7_220101039.y"
+                                                                                 { logging("iteration_statement --> while ( expression ) statement (While loop)"); }
+#line 1942 "y.tab.c"
     break;
 
   case 85: /* iteration_statement: DO statement WHILE '(' expression ')' ';'  */
-#line 255 "a7_220101039.y"
-                                                                                 { logging("iteration_statement -> do statement while ( expression ) ; (Do-while loop)"); }
-#line 1950 "y.tab.c"
+#line 258 "a7_220101039.y"
+                                                                                 { logging("iteration_statement --> do statement while ( expression ) ; (Do-while loop)"); }
+#line 1948 "y.tab.c"
     break;
 
   case 86: /* jump_statement: RETURN ';'  */
-#line 258 "a7_220101039.y"
-                           { logging("jump_statement -> return ;"); }
-#line 1956 "y.tab.c"
+#line 261 "a7_220101039.y"
+                           { logging("jump_statement --> return ;"); }
+#line 1954 "y.tab.c"
     break;
 
   case 87: /* jump_statement: RETURN expression ';'  */
-#line 259 "a7_220101039.y"
-                            { logging("jump_statement -> return expression ;"); }
-#line 1962 "y.tab.c"
+#line 262 "a7_220101039.y"
+                            { logging("jump_statement --> return expression ;"); }
+#line 1960 "y.tab.c"
     break;
 
   case 88: /* translation_unit: function_definition  */
-#line 264 "a7_220101039.y"
-                                         { logging("translation_unit -> function_definition"); }
-#line 1968 "y.tab.c"
+#line 267 "a7_220101039.y"
+                                         { logging("translation_unit --> function_definition"); }
+#line 1966 "y.tab.c"
     break;
 
   case 89: /* translation_unit: declaration  */
-#line 265 "a7_220101039.y"
-                                         { logging("translation_unit -> declaration"); }
-#line 1974 "y.tab.c"
+#line 268 "a7_220101039.y"
+                                         { logging("translation_unit --> declaration"); }
+#line 1972 "y.tab.c"
     break;
 
   case 90: /* translation_unit: translation_unit function_definition  */
-#line 266 "a7_220101039.y"
-                                           { logging("translation_unit -> translation_unit function_definition"); }
-#line 1980 "y.tab.c"
+#line 269 "a7_220101039.y"
+                                           { logging("translation_unit --> translation_unit function_definition"); }
+#line 1978 "y.tab.c"
     break;
 
   case 91: /* translation_unit: translation_unit declaration  */
-#line 267 "a7_220101039.y"
-                                         { logging("translation_unit -> translation_unit declaration"); }
-#line 1986 "y.tab.c"
+#line 270 "a7_220101039.y"
+                                         { logging("translation_unit --> translation_unit declaration"); }
+#line 1984 "y.tab.c"
     break;
 
-  case 92: /* function_definition: type_specifier declarator compound_statement  */
-#line 271 "a7_220101039.y"
-                                                                    { logging("function_definition -> type_specifier declarator compound_statement"); }
-#line 1992 "y.tab.c"
+  case 92: /* function_definition: type_specifier function_declarator compound_statement  */
+#line 274 "a7_220101039.y"
+                                                                             { logging("function_definition --> type_specifier function_declarator compound_statement"); }
+#line 1990 "y.tab.c"
     break;
 
-  case 93: /* function_definition: type_specifier declarator declaration_list compound_statement  */
-#line 272 "a7_220101039.y"
-                                                                    { logging("function_definition -> type_specifier declarator declaration_list compound_statement"); }
-#line 1998 "y.tab.c"
+  case 93: /* function_definition: type_specifier function_declarator declaration_list compound_statement  */
+#line 275 "a7_220101039.y"
+                                                                             { logging("function_definition --> type_specifier function_declarator declaration_list compound_statement"); }
+#line 1996 "y.tab.c"
     break;
 
   case 94: /* declaration_list: declaration  */
-#line 276 "a7_220101039.y"
-                                     { logging("declaration_list -> declaration"); }
-#line 2004 "y.tab.c"
+#line 279 "a7_220101039.y"
+                                     { logging("declaration_list --> declaration"); }
+#line 2002 "y.tab.c"
     break;
 
   case 95: /* declaration_list: declaration_list declaration  */
-#line 277 "a7_220101039.y"
-                                     { logging("declaration_list -> declaration_list declaration"); }
-#line 2010 "y.tab.c"
+#line 280 "a7_220101039.y"
+                                     { logging("declaration_list --> declaration_list declaration"); }
+#line 2008 "y.tab.c"
     break;
 
 
-#line 2014 "y.tab.c"
+#line 2012 "y.tab.c"
 
       default: break;
     }
@@ -2203,7 +2201,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 280 "a7_220101039.y"
+#line 283 "a7_220101039.y"
 
 
 int main(int argc, char **argv) {

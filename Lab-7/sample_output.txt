@@ -1,0 +1,416 @@
+............. Starting the parsing process .............
+
+Line no. 1: type-specifier --> integer
+Line no. 1: type-specifier --> integer
+Line no. 1: pointer-opt --> epsilon
+Line no. 1: identifier-opt --> IDENTIFIERS
+Line no. 1: parameter-declaration --> declaration-specifiers declarator
+Line no. 1: parameter-list --> parameter-declaration
+Line no. 1: parameter-type-list --> parameter-list
+Line no. 1: direct-declarator --> ( parameter-type-list )
+Line no. 2: primary-expression --> identifier
+Line no. 2: postfix-expression --> primary-expression
+Line no. 2: unary-expression --> postfix-expression
+Line no. 2: multiplicative-expression --> unary-expression
+Line no. 2: primary-expression --> identifier
+Line no. 2: postfix-expression --> primary-expression
+Line no. 2: unary-expression --> postfix-expression
+Line no. 2: multiplicative-expression --> multiplicative-expression * unary-expression
+Line no. 2: additive-expression --> multiplicative-expression
+Line no. 2: relational-expression --> additive-expression
+Line no. 2: equality-expression --> relational-expression
+Line no. 2: logical-AND-expression --> equality-expression
+Line no. 2: logical-OR-expression --> logical-AND-expression
+Line no. 2: conditional-expression --> logical-OR-expression
+Line no. 2: assignment-expression --> conditional-expression
+Line no. 2: expression --> assignment-expression
+Line no. 2: expression-opt --> expression
+Line no. 2: jump-statement --> return expression-opt ;
+Line no. 2: statement --> jump-statement
+Line no. 2: block-item --> statement
+Line no. 2: block-item-list --> block-item
+Line no. 3: block-item-list-opt --> block-item-list
+Line no. 3: compound-statement -->  begin block-item-list-opt  end
+Line no. 3: function-definition --> declaration-specifiers declarator declaration-list-opt compound-statement
+Line no. 3: external-declaration --> function-definition
+Line no. 3: translation-unit --> external-declaration
+Line no. 5: type-specifier --> integer
+Line no. 5: type-specifier --> integer
+Line no. 5: pointer-opt --> epsilon
+Line no. 5: identifier-opt --> IDENTIFIERS
+Line no. 5: parameter-declaration --> declaration-specifiers declarator
+Line no. 5: parameter-list --> parameter-declaration
+Line no. 5: parameter-type-list --> parameter-list
+Line no. 5: direct-declarator --> ( parameter-type-list )
+Line no. 6: type-specifier --> integer
+Line no. 6: pointer-opt --> epsilon
+Line no. 6: direct-declarator --> identifier
+Line no. 6: declarator --> pointer-opt direct-declarator
+Line no. 6: primary-expression --> integer_constant
+Line no. 6: postfix-expression --> primary-expression
+Line no. 6: unary-expression --> postfix-expression
+Line no. 6: multiplicative-expression --> unary-expression
+Line no. 6: additive-expression --> multiplicative-expression
+Line no. 6: relational-expression --> additive-expression
+Line no. 6: equality-expression --> relational-expression
+Line no. 6: logical-AND-expression --> equality-expression
+Line no. 6: logical-OR-expression --> logical-AND-expression
+Line no. 6: conditional-expression --> logical-OR-expression
+Line no. 6: assignment-expression --> conditional-expression
+Line no. 6: initializer --> assignment-expression
+Line no. 6: init-declarator --> declarator = initializer
+Line no. 6: declaration --> declaration-specifiers init-declarator-list-opt ;
+Line no. 6: block-item --> declaration
+Line no. 6: block-item-list --> block-item
+Line no. 7: primary-expression --> identifier
+Line no. 7: postfix-expression --> primary-expression
+Line no. 7: unary-expression --> postfix-expression
+Line no. 7: primary-expression --> integer_constant
+Line no. 7: postfix-expression --> primary-expression
+Line no. 7: unary-expression --> postfix-expression
+Line no. 7: multiplicative-expression --> unary-expression
+Line no. 7: additive-expression --> multiplicative-expression
+Line no. 7: relational-expression --> additive-expression
+Line no. 7: equality-expression --> relational-expression
+Line no. 7: logical-AND-expression --> equality-expression
+Line no. 7: logical-OR-expression --> logical-AND-expression
+Line no. 7: conditional-expression --> logical-OR-expression
+Line no. 7: assignment-expression --> conditional-expression
+Line no. 7: assignment-expression --> unary-expression assignment-operator assignment-expression
+Line no. 7: expression --> assignment-expression
+Line no. 7: expression-opt --> expression
+Line no. 7: primary-expression --> identifier
+Line no. 7: postfix-expression --> primary-expression
+Line no. 7: unary-expression --> postfix-expression
+Line no. 7: multiplicative-expression --> unary-expression
+Line no. 7: additive-expression --> multiplicative-expression
+Line no. 7: relational-expression --> additive-expression
+Line no. 7: primary-expression --> integer_constant
+Line no. 7: postfix-expression --> primary-expression
+Line no. 7: unary-expression --> postfix-expression
+Line no. 7: multiplicative-expression --> unary-expression
+Line no. 7: additive-expression --> multiplicative-expression
+Line no. 7: relational-expression --> relational-expression < shift-expression
+Line no. 7: equality-expression --> relational-expression
+Line no. 7: logical-AND-expression --> equality-expression
+Line no. 7: logical-OR-expression --> logical-AND-expression
+Line no. 7: conditional-expression --> logical-OR-expression
+Line no. 7: assignment-expression --> conditional-expression
+Line no. 7: expression --> assignment-expression
+Line no. 7: expression-opt --> expression
+Line no. 7: primary-expression --> identifier
+Line no. 7: postfix-expression --> primary-expression
+Line no. 7: unary-expression --> postfix-expression
+Line no. 7: primary-expression --> identifier
+Line no. 7: postfix-expression --> primary-expression
+Line no. 7: unary-expression --> postfix-expression
+Line no. 7: multiplicative-expression --> unary-expression
+Line no. 7: additive-expression --> multiplicative-expression
+Line no. 7: primary-expression --> integer_constant
+Line no. 7: postfix-expression --> primary-expression
+Line no. 7: unary-expression --> postfix-expression
+Line no. 7: multiplicative-expression --> unary-expression
+Line no. 7: additive-expression --> additive-expression + multiplicative-expression
+Line no. 7: relational-expression --> additive-expression
+Line no. 7: equality-expression --> relational-expression
+Line no. 7: logical-AND-expression --> equality-expression
+Line no. 7: logical-OR-expression --> logical-AND-expression
+Line no. 7: conditional-expression --> logical-OR-expression
+Line no. 7: assignment-expression --> conditional-expression
+Line no. 7: assignment-expression --> unary-expression assignment-operator assignment-expression
+Line no. 7: expression --> assignment-expression
+Line no. 7: expression-opt --> expression
+Line no. 8: primary-expression --> identifier
+Line no. 8: postfix-expression --> primary-expression
+Line no. 8: unary-expression --> postfix-expression
+Line no. 8: primary-expression --> identifier
+Line no. 8: postfix-expression --> primary-expression
+Line no. 8: unary-expression --> postfix-expression
+Line no. 8: multiplicative-expression --> unary-expression
+Line no. 8: additive-expression --> multiplicative-expression
+Line no. 8: primary-expression --> identifier
+Line no. 8: postfix-expression --> primary-expression
+Line no. 8: primary-expression --> identifier
+Line no. 8: postfix-expression --> primary-expression
+Line no. 8: unary-expression --> postfix-expression
+Line no. 8: multiplicative-expression --> unary-expression
+Line no. 8: additive-expression --> multiplicative-expression
+Line no. 8: relational-expression --> additive-expression
+Line no. 8: equality-expression --> relational-expression
+Line no. 8: logical-AND-expression --> equality-expression
+Line no. 8: logical-OR-expression --> logical-AND-expression
+Line no. 8: conditional-expression --> logical-OR-expression
+Line no. 8: assignment-expression --> conditional-expression
+Line no. 8: expression --> assignment-expression
+Line no. 8: postfix-expression --> postfix-expression [ expression ]
+Line no. 8: unary-expression --> postfix-expression
+Line no. 8: multiplicative-expression --> unary-expression
+Line no. 8: additive-expression --> additive-expression + multiplicative-expression
+Line no. 8: relational-expression --> additive-expression
+Line no. 8: equality-expression --> relational-expression
+Line no. 8: logical-AND-expression --> equality-expression
+Line no. 8: logical-OR-expression --> logical-AND-expression
+Line no. 8: conditional-expression --> logical-OR-expression
+Line no. 8: assignment-expression --> conditional-expression
+Line no. 8: assignment-expression --> unary-expression assignment-operator assignment-expression
+Line no. 8: expression --> assignment-expression
+Line no. 8: expression-opt --> expression
+Line no. 8: expression-statement --> expression-opt ;
+Line no. 8: statement --> expression-statement
+Line no. 8: block-item --> statement
+Line no. 8: block-item-list --> block-item
+Line no. 9: block-item-list-opt --> block-item-list
+Line no. 9: compound-statement -->  begin block-item-list-opt  end
+Line no. 9: statement --> compound-statement
+Line no. 9: iteration-statement --> for ( expression-opt ; expression-opt ; expression-opt ) statement
+Line no. 9: statement --> iteration-statement
+Line no. 9: block-item --> statement
+Line no. 9: block-item-list --> block-item-list block-item
+Line no. 10: primary-expression --> identifier
+Line no. 10: postfix-expression --> primary-expression
+Line no. 10: unary-expression --> postfix-expression
+Line no. 10: multiplicative-expression --> unary-expression
+Line no. 10: additive-expression --> multiplicative-expression
+Line no. 10: relational-expression --> additive-expression
+Line no. 10: equality-expression --> relational-expression
+Line no. 10: logical-AND-expression --> equality-expression
+Line no. 10: logical-OR-expression --> logical-AND-expression
+Line no. 10: conditional-expression --> logical-OR-expression
+Line no. 10: assignment-expression --> conditional-expression
+Line no. 10: expression --> assignment-expression
+Line no. 10: expression-opt --> expression
+Line no. 10: jump-statement --> return expression-opt ;
+Line no. 10: statement --> jump-statement
+Line no. 10: block-item --> statement
+Line no. 10: block-item-list --> block-item-list block-item
+Line no. 11: block-item-list-opt --> block-item-list
+Line no. 11: compound-statement -->  begin block-item-list-opt  end
+Line no. 11: function-definition --> declaration-specifiers declarator declaration-list-opt compound-statement
+Line no. 11: external-declaration --> function-definition
+Line no. 11: translation-unit --> translation-unit external-declaration
+Line no. 13: type-specifier --> integer
+Line no. 13: parameter-type-list --> epsilon
+Line no. 13: direct-declarator --> ( parameter-type-list )
+Line no. 14: type-specifier --> integer
+Line no. 14: pointer-opt --> epsilon
+Line no. 14: direct-declarator --> identifier
+Line no. 14: declarator --> pointer-opt direct-declarator
+Line no. 14: init-declarator --> declarator
+Line no. 14: declaration --> declaration-specifiers init-declarator-list-opt ;
+Line no. 14: block-item --> declaration
+Line no. 14: block-item-list --> block-item
+Line no. 15: primary-expression --> identifier
+Line no. 15: postfix-expression --> primary-expression
+Line no. 15: unary-expression --> postfix-expression
+Line no. 15: primary-expression --> identifier
+Line no. 15: postfix-expression --> primary-expression
+Line no. 15: primary-expression --> integer_constant
+Line no. 15: postfix-expression --> primary-expression
+Line no. 15: unary-expression --> postfix-expression
+Line no. 15: multiplicative-expression --> unary-expression
+Line no. 15: additive-expression --> multiplicative-expression
+Line no. 15: relational-expression --> additive-expression
+Line no. 15: equality-expression --> relational-expression
+Line no. 15: logical-AND-expression --> equality-expression
+Line no. 15: logical-OR-expression --> logical-AND-expression
+Line no. 15: conditional-expression --> logical-OR-expression
+Line no. 15: assignment-expression --> conditional-expression
+Line no. 15: argument-expression-list --> assignment-expression
+Line no. 15: argument-expression-list-opt --> argument-expression-list
+Line no. 15: postfix-expression --> postfix-expression ( argument-expression-list-opt )
+Line no. 15: unary-expression --> postfix-expression
+Line no. 15: multiplicative-expression --> unary-expression
+Line no. 15: additive-expression --> multiplicative-expression
+Line no. 15: relational-expression --> additive-expression
+Line no. 15: equality-expression --> relational-expression
+Line no. 15: logical-AND-expression --> equality-expression
+Line no. 15: logical-OR-expression --> logical-AND-expression
+Line no. 15: conditional-expression --> logical-OR-expression
+Line no. 15: assignment-expression --> conditional-expression
+Line no. 15: assignment-expression --> unary-expression assignment-operator assignment-expression
+Line no. 15: expression --> assignment-expression
+Line no. 15: expression-opt --> expression
+Line no. 15: expression-statement --> expression-opt ;
+Line no. 15: statement --> expression-statement
+Line no. 15: block-item --> statement
+Line no. 15: block-item-list --> block-item-list block-item
+Line no. 16: type-specifier --> integer
+Line no. 16: pointer-opt --> epsilon
+Line no. 16: direct-declarator --> identifier
+Line no. 16: declarator --> pointer-opt direct-declarator
+Line no. 16: init-declarator --> declarator
+Line no. 16: declaration --> declaration-specifiers init-declarator-list-opt ;
+Line no. 16: block-item --> declaration
+Line no. 16: block-item-list --> block-item-list block-item
+Line no. 17: type-specifier --> integer
+Line no. 17: pointer-opt --> epsilon
+Line no. 17: direct-declarator --> [ INTEGER-CONSTANT ]
+Line no. 17: declarator --> pointer-opt direct-declarator
+Line no. 17: init-declarator --> declarator
+Line no. 17: declaration --> declaration-specifiers init-declarator-list-opt ;
+Line no. 17: block-item --> declaration
+Line no. 17: block-item-list --> block-item-list block-item
+Line no. 18: primary-expression --> identifier
+Line no. 18: postfix-expression --> primary-expression
+Line no. 18: unary-expression --> postfix-expression
+Line no. 18: primary-expression --> integer_constant
+Line no. 18: postfix-expression --> primary-expression
+Line no. 18: unary-expression --> postfix-expression
+Line no. 18: multiplicative-expression --> unary-expression
+Line no. 18: additive-expression --> multiplicative-expression
+Line no. 18: relational-expression --> additive-expression
+Line no. 18: equality-expression --> relational-expression
+Line no. 18: logical-AND-expression --> equality-expression
+Line no. 18: logical-OR-expression --> logical-AND-expression
+Line no. 18: conditional-expression --> logical-OR-expression
+Line no. 18: assignment-expression --> conditional-expression
+Line no. 18: assignment-expression --> unary-expression assignment-operator assignment-expression
+Line no. 18: expression --> assignment-expression
+Line no. 18: expression-opt --> expression
+Line no. 18: primary-expression --> identifier
+Line no. 18: postfix-expression --> primary-expression
+Line no. 18: unary-expression --> postfix-expression
+Line no. 18: multiplicative-expression --> unary-expression
+Line no. 18: additive-expression --> multiplicative-expression
+Line no. 18: relational-expression --> additive-expression
+Line no. 18: primary-expression --> integer_constant
+Line no. 18: postfix-expression --> primary-expression
+Line no. 18: unary-expression --> postfix-expression
+Line no. 18: multiplicative-expression --> unary-expression
+Line no. 18: additive-expression --> multiplicative-expression
+Line no. 18: relational-expression --> relational-expression < shift-expression
+Line no. 18: equality-expression --> relational-expression
+Line no. 18: logical-AND-expression --> equality-expression
+Line no. 18: logical-OR-expression --> logical-AND-expression
+Line no. 18: conditional-expression --> logical-OR-expression
+Line no. 18: assignment-expression --> conditional-expression
+Line no. 18: expression --> assignment-expression
+Line no. 18: expression-opt --> expression
+Line no. 18: primary-expression --> identifier
+Line no. 18: postfix-expression --> primary-expression
+Line no. 18: unary-expression --> postfix-expression
+Line no. 18: primary-expression --> identifier
+Line no. 18: postfix-expression --> primary-expression
+Line no. 18: unary-expression --> postfix-expression
+Line no. 18: multiplicative-expression --> unary-expression
+Line no. 18: additive-expression --> multiplicative-expression
+Line no. 18: primary-expression --> integer_constant
+Line no. 18: postfix-expression --> primary-expression
+Line no. 18: unary-expression --> postfix-expression
+Line no. 18: multiplicative-expression --> unary-expression
+Line no. 18: additive-expression --> additive-expression + multiplicative-expression
+Line no. 18: relational-expression --> additive-expression
+Line no. 18: equality-expression --> relational-expression
+Line no. 18: logical-AND-expression --> equality-expression
+Line no. 18: logical-OR-expression --> logical-AND-expression
+Line no. 18: conditional-expression --> logical-OR-expression
+Line no. 18: assignment-expression --> conditional-expression
+Line no. 18: assignment-expression --> unary-expression assignment-operator assignment-expression
+Line no. 18: expression --> assignment-expression
+Line no. 18: expression-opt --> expression
+Line no. 19: primary-expression --> identifier
+Line no. 19: postfix-expression --> primary-expression
+Line no. 19: primary-expression --> identifier
+Line no. 19: postfix-expression --> primary-expression
+Line no. 19: unary-expression --> postfix-expression
+Line no. 19: multiplicative-expression --> unary-expression
+Line no. 19: additive-expression --> multiplicative-expression
+Line no. 19: relational-expression --> additive-expression
+Line no. 19: equality-expression --> relational-expression
+Line no. 19: logical-AND-expression --> equality-expression
+Line no. 19: logical-OR-expression --> logical-AND-expression
+Line no. 19: conditional-expression --> logical-OR-expression
+Line no. 19: assignment-expression --> conditional-expression
+Line no. 19: expression --> assignment-expression
+Line no. 19: postfix-expression --> postfix-expression [ expression ]
+Line no. 19: unary-expression --> postfix-expression
+Line no. 19: primary-expression --> identifier
+Line no. 19: postfix-expression --> primary-expression
+Line no. 19: unary-expression --> postfix-expression
+Line no. 19: multiplicative-expression --> unary-expression
+Line no. 19: additive-expression --> multiplicative-expression
+Line no. 19: relational-expression --> additive-expression
+Line no. 19: equality-expression --> relational-expression
+Line no. 19: logical-AND-expression --> equality-expression
+Line no. 19: logical-OR-expression --> logical-AND-expression
+Line no. 19: conditional-expression --> logical-OR-expression
+Line no. 19: assignment-expression --> conditional-expression
+Line no. 19: assignment-expression --> unary-expression assignment-operator assignment-expression
+Line no. 19: expression --> assignment-expression
+Line no. 19: expression-opt --> expression
+Line no. 19: expression-statement --> expression-opt ;
+Line no. 19: statement --> expression-statement
+Line no. 19: block-item --> statement
+Line no. 19: block-item-list --> block-item
+Line no. 20: block-item-list-opt --> block-item-list
+Line no. 20: compound-statement -->  begin block-item-list-opt  end
+Line no. 20: statement --> compound-statement
+Line no. 20: iteration-statement --> for ( expression-opt ; expression-opt ; expression-opt ) statement
+Line no. 20: statement --> iteration-statement
+Line no. 20: block-item --> statement
+Line no. 20: block-item-list --> block-item-list block-item
+Line no. 21: type-specifier --> integer
+Line no. 21: pointer-opt --> epsilon
+Line no. 21: direct-declarator --> identifier
+Line no. 21: declarator --> pointer-opt direct-declarator
+Line no. 21: init-declarator --> declarator
+Line no. 21: declaration --> declaration-specifiers init-declarator-list-opt ;
+Line no. 21: block-item --> declaration
+Line no. 21: block-item-list --> block-item-list block-item
+Line no. 22: primary-expression --> identifier
+Line no. 22: postfix-expression --> primary-expression
+Line no. 22: unary-expression --> postfix-expression
+Line no. 22: primary-expression --> identifier
+Line no. 22: postfix-expression --> primary-expression
+Line no. 22: primary-expression --> identifier
+Line no. 22: postfix-expression --> primary-expression
+Line no. 22: unary-expression --> postfix-expression
+Line no. 22: multiplicative-expression --> unary-expression
+Line no. 22: additive-expression --> multiplicative-expression
+Line no. 22: relational-expression --> additive-expression
+Line no. 22: equality-expression --> relational-expression
+Line no. 22: logical-AND-expression --> equality-expression
+Line no. 22: logical-OR-expression --> logical-AND-expression
+Line no. 22: conditional-expression --> logical-OR-expression
+Line no. 22: assignment-expression --> conditional-expression
+Line no. 22: argument-expression-list --> assignment-expression
+Line no. 22: argument-expression-list-opt --> argument-expression-list
+Line no. 22: postfix-expression --> postfix-expression ( argument-expression-list-opt )
+Line no. 22: unary-expression --> postfix-expression
+Line no. 22: multiplicative-expression --> unary-expression
+Line no. 22: additive-expression --> multiplicative-expression
+Line no. 22: relational-expression --> additive-expression
+Line no. 22: equality-expression --> relational-expression
+Line no. 22: logical-AND-expression --> equality-expression
+Line no. 22: logical-OR-expression --> logical-AND-expression
+Line no. 22: conditional-expression --> logical-OR-expression
+Line no. 22: assignment-expression --> conditional-expression
+Line no. 22: assignment-expression --> unary-expression assignment-operator assignment-expression
+Line no. 22: expression --> assignment-expression
+Line no. 22: expression-opt --> expression
+Line no. 22: expression-statement --> expression-opt ;
+Line no. 22: statement --> expression-statement
+Line no. 22: block-item --> statement
+Line no. 22: block-item-list --> block-item-list block-item
+Line no. 24: primary-expression --> integer_constant
+Line no. 24: postfix-expression --> primary-expression
+Line no. 24: unary-expression --> postfix-expression
+Line no. 24: multiplicative-expression --> unary-expression
+Line no. 24: additive-expression --> multiplicative-expression
+Line no. 24: relational-expression --> additive-expression
+Line no. 24: equality-expression --> relational-expression
+Line no. 24: logical-AND-expression --> equality-expression
+Line no. 24: logical-OR-expression --> logical-AND-expression
+Line no. 24: conditional-expression --> logical-OR-expression
+Line no. 24: assignment-expression --> conditional-expression
+Line no. 24: expression --> assignment-expression
+Line no. 24: expression-opt --> expression
+Line no. 24: jump-statement --> return expression-opt ;
+Line no. 24: statement --> jump-statement
+Line no. 24: block-item --> statement
+Line no. 24: block-item-list --> block-item-list block-item
+Line no. 25: block-item-list-opt --> block-item-list
+Line no. 25: compound-statement -->  begin block-item-list-opt  end
+Line no. 25: function-definition --> declaration-specifiers declarator declaration-list-opt compound-statement
+Line no. 25: external-declaration --> function-definition
+Line no. 25: translation-unit --> translation-unit external-declaration
