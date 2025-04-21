@@ -23,6 +23,28 @@ void init_quad_array() {
     printf("Quad array initialized with capacity %d\n", quad_capacity);
 }
 
+// Update in quad_array.c
+Quad* create_array_access_quad(OpCode op, Symbol* arg1, Symbol* arg2, Symbol* result) {
+    printf("DEBUG: Creating array access quad:\n");
+    printf("  - Array: %s (type=%d)\n", arg1 ? arg1->name : "NULL", arg1 ? arg1->type : -1);
+    printf("  - Index: %s\n", arg2 ? arg2->name : "NULL");
+    printf("  - Result: %s\n", result ? result->name : "NULL");
+    
+    Quad* q = (Quad*)malloc(sizeof(Quad));
+    if (!q) {
+        fprintf(stderr, "Memory allocation failed for quad\n");
+        exit(1);
+    }
+    
+    q->op = op;
+    q->arg1 = arg1;
+    q->arg2 = arg2;
+    q->result = result;
+    q->label = -1;  // No label yet
+    q->next = NULL;
+    
+    return q;
+}
 // Emit a quad and add it to the quad array
 int emit(OpCode op, Symbol *arg1, Symbol *arg2, Symbol *result) {
     // If quad array is not initialized, initialize it
@@ -35,7 +57,12 @@ int emit(OpCode op, Symbol *arg1, Symbol *arg2, Symbol *result) {
         quad_capacity *= 2;
         quad_array = (Quad**) realloc(quad_array, quad_capacity * sizeof(Quad*));
     }
-    
+    // Special case for array access
+    if (op == OP_ARRAY_ACCESS) {        
+        // Use the safe version for array access
+        quad_array[quad_index] = create_array_access_quad(op, arg1, arg2, result);
+        return quad_index++;
+    }
     // Create a new quad
     Quad *q = (Quad*) malloc(sizeof(Quad));
     q->op = op;

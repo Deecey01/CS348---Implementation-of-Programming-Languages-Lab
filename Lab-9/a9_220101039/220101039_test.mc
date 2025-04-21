@@ -41,7 +41,20 @@ begin
     end while (i < size);
 end
 
-
+/* Function to compute average of array elements */
+float computeAverage(integer arr[10], integer count) 
+begin
+    integer sum = 0;
+    integer i = 0;
+    
+    while (i < count) 
+    begin
+        sum = sum + arr[i];
+        i = i + 1;
+    end
+    
+    return sum / count;
+end
 
 /* Main function to test conditional statements */
 void main() 

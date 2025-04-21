@@ -1,0 +1,175 @@
+Parsing completed successfully.
+
+--- Symbol Table ---
+
+Symbol Table: global
+----------------------------------------
+Name       Type       Size     Offset     Initial Value
+----------------------------------------
+main       function   4        0          -
+const_10   int        4        0          10
+const_7    int        4        0          10
+count      int        4        0          0
+const_3    int        4        0          10
+values     array      4        0          -
+computeAverage function   4        0          -
+n          int        4        0          0
+factorial  function   4        0          -
+size       int        4        0          0
+const_2    int        4        0          10
+arr        ptr        4        0          -
+printArray function   4        0          -
+globalPtr  ptr        4        0          -
+const_1    int        4        0          10
+globalArray array      4        0          -
+t0         int        4        0          0
+const_0    float      8        0          3.140000
+globalFloat int        4        0          0
+globalVar  int        4        0          0
+----------------------------------------
+
+--- Generated Quads ---
+
+Quad Array:
+----------------------------------------
+Index Operation       Arg1       Arg2       Result    
+----------------------------------------
+0     FLOAT_TO_INT    const_0    -          t0        
+1     ASSIGN          t0         -          globalFloat
+2     ASSIGN          const_4    -          result    
+3     ASSIGN          const_5    -          i         
+4     LE              i          n          t3        
+5     IF_GOTO         t3         -          L7        
+6     GOTO            -          -          L12       
+7     MUL             result     i          t0        
+8     ASSIGN          t0         -          result    
+9     ADD             i          const_6    t2        
+10    ASSIGN          t2         -          i         
+11    GOTO            -          -          t2        
+12    RETURN          result     -          -         
+13    ASSIGN          const_8    -          i         
+14    MUL             i                     t1        
+15    ARRAY_ACCESS    arr        t1         t0        
+16    ASSIGN          t0         -          globalVar 
+17    ADD             i          const_9    t3        
+18    ASSIGN          t3         -          i         
+19    LT              i          size       t3        
+20    IF_GOTO         t3         -          L14       
+21    GOTO            -          -          -         
+22    ASSIGN          const_11   -          sum       
+23    ASSIGN          const_12   -          i         
+24    LT              i          count      t3        
+25    IF_GOTO         t3         -          L27       
+26    GOTO            -          -          L34       
+27    MUL             i                     t1        
+28    ARRAY_ACCESS    arr        t1         t0        
+29    ADD             sum        t0         t2        
+30    ASSIGN          t2         -          sum       
+31    ADD             i          const_13   t4        
+32    ASSIGN          t4         -          i         
+33    GOTO            -          -          t2        
+34    DIV             sum        count      t6        
+35    RETURN          t6         -          -         
+36    ASSIGN          const_14   -          x         
+37    ASSIGN          const_15   -          y         
+38    ADDR            x          -          t10       
+39    ASSIGN          t10        -          ptr       
+40    DEREF           ptr        -          t12       
+41    ASSIGN          const_17   -          t12       
+42    MUL             y          const_18   t14       
+43    ADD             x          t14        t15       
+44    ASSIGN          t15        -          z         
+45    SUB             z          const_19   t17       
+46    ASSIGN          t17        -          z         
+47    GT              x          const_20   t19       
+48    IF_GOTO         t19        -          L50       
+49    GOTO            -          -          L57       
+50    LT              y          const_21   t21       
+51    IF_GOTO         t21        -          L54       
+52    GOTO            -          -          L57       
+53    AND             t19        t21        t22       
+54    MUL             x          y          t0        
+55    ASSIGN          t0         -          z         
+56    GOTO            -          -          L59       
+57    ADD             x          y          t0        
+58    ASSIGN          t0         -          z         
+59    GT              z          const_22   t26       
+60    IF_GOTO         t26        -          L62       
+61    GOTO            -          -          L70       
+62    EQ              x          const_23   t0        
+63    IF_GOTO         t0         -          L65       
+64    GOTO            -          -          L68       
+65    ADD             z          const_24   t0        
+66    ASSIGN          t0         -          z         
+67    GOTO            -          -          L70       
+68    SUB             z          const_25   t0        
+69    ASSIGN          t0         -          z         
+70    MUL             const_26              t30       
+71    ASSIGN          0          -          t29       
+72    ASSIGN          const_27   -          t29       
+73    MUL             const_28              t33       
+74    ASSIGN          0          -          t32       
+75    ASSIGN          const_29   -          t32       
+76    MUL             const_30              t36       
+77    ASSIGN          0          -          t35       
+78    ASSIGN          const_31   -          t35       
+79    MUL             const_32              t39       
+80    ASSIGN          0          -          t38       
+81    ASSIGN          const_33   -          t38       
+82    MUL             const_34              t42       
+83    ASSIGN          0          -          t41       
+84    ASSIGN          const_35   -          t41       
+85    MUL             const_36              t45       
+86    ASSIGN          0          -          t44       
+87    ASSIGN          const_37   -          t44       
+88    MUL             const_38              t48       
+89    ASSIGN          0          -          t47       
+90    ASSIGN          const_39   -          t47       
+91    MUL             const_40              t51       
+92    ASSIGN          0          -          t50       
+93    ASSIGN          const_41   -          t50       
+94    MUL             const_42              t54       
+95    ASSIGN          0          -          t53       
+96    ASSIGN          const_43   -          t53       
+97    MUL             const_44              t57       
+98    ASSIGN          0          -          t56       
+99    ASSIGN          const_45   -          t56       
+100   PARAM           numbers    -          -         
+101   PARAM           const_46   -          -         
+102   CALL            printArray -          t59       
+103   PARAM           const_47   -          -         
+104   CALL            factorial  -          t61       
+105   ASSIGN          t61        -          z         
+106   PARAM           numbers    -          -         
+107   PARAM           const_48   -          -         
+108   CALL            computeAverage -          t63       
+109   INT_TO_FLOAT    t63        -          t64       
+110   ASSIGN          t64        -          result    
+111   BITAND          x          y          t66       
+112   ASSIGN          t66        -          x         
+113   BITOR           y          const_49   t68       
+114   ASSIGN          t68        -          y         
+115   SHL             z          const_50   t70       
+116   ASSIGN          t70        -          z         
+117   SHR             z          const_51   t72       
+118   ASSIGN          t72        -          z         
+119   UMINUS          x          -          t74       
+120   ASSIGN          t74        -          x         
+121   NOT             z          -          t76       
+122   COPY            t76        -          t77       
+123   ASSIGN          t77        -          z         
+124   GT              y          const_52   t79       
+125   IF_GOTO         t79        -          -         
+126   GOTO            -          -          -         
+127   IF_GOTO         t79        -          t81       
+128   GOTO            -          -          t82       
+129   ASSIGN          y          -          t80       
+130   GOTO            -          -          t83       
+131   ASSIGN          const_53   -          t80       
+132   ASSIGN          t80        -          x         
+133   ADDR            z          -          t85       
+134   ASSIGN          t85        -          ptr       
+135   DEREF           ptr        -          t87       
+136   ASSIGN          const_54   -          t87       
+137   RETURN          -          -          -         
+----------------------------------------

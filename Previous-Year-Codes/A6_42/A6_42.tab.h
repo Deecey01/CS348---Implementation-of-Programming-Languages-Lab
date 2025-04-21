@@ -54,46 +54,48 @@ extern int yydebug;
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    CONST = 258,                   /* CONST  */
-    ELSE = 259,                    /* ELSE  */
-    FOR = 260,                     /* FOR  */
-    IF = 261,                      /* IF  */
-    ADDRESS = 262,                 /* ADDRESS  */
-    INTTYPE = 263,                 /* INTTYPE  */
-    RETURN = 264,                  /* RETURN  */
-    INVALID_TOKEN = 265,           /* INVALID_TOKEN  */
-    VOIDTYPE = 266,                /* VOIDTYPE  */
-    IDENTIFIER = 267,              /* IDENTIFIER  */
-    INTEGER_CONSTANT = 268,        /* INTEGER_CONSTANT  */
-    CHARACTER_CONSTANT = 269,      /* CHARACTER_CONSTANT  */
-    STRING_LITERAL = 270,          /* STRING_LITERAL  */
-    LEFT_SQUARE_BRACKET = 271,     /* LEFT_SQUARE_BRACKET  */
-    SLASH = 272,                   /* SLASH  */
-    QUESTION_MARK = 273,           /* QUESTION_MARK  */
-    ASSIGNMENT = 274,              /* ASSIGNMENT  */
-    COMMA = 275,                   /* COMMA  */
-    RIGHT_SQUARE_BRACKET = 276,    /* RIGHT_SQUARE_BRACKET  */
-    LEFT_PARENTHESES = 277,        /* LEFT_PARENTHESES  */
-    LEFT_CURLY_BRACKET = 278,      /* LEFT_CURLY_BRACKET  */
-    RIGHT_CURLY_BRACKET = 279,     /* RIGHT_CURLY_BRACKET  */
-    ARROW = 280,                   /* ARROW  */
-    ASTERISK = 281,                /* ASTERISK  */
-    PLUS = 282,                    /* PLUS  */
-    MINUS = 283,                   /* MINUS  */
-    EXCLAMATION = 284,             /* EXCLAMATION  */
-    MODULO = 285,                  /* MODULO  */
-    LESS_THAN = 286,               /* LESS_THAN  */
-    GREATER_THAN = 287,            /* GREATER_THAN  */
-    LESS_EQUAL_THAN = 288,         /* LESS_EQUAL_THAN  */
-    GREATER_EQUAL_THAN = 289,      /* GREATER_EQUAL_THAN  */
-    COLON = 290,                   /* COLON  */
-    SEMI_COLON = 291,              /* SEMI_COLON  */
-    RIGHT_PARENTHESES = 292,       /* RIGHT_PARENTHESES  */
-    EQUALS = 293,                  /* EQUALS  */
-    LOGICAL_AND = 294,             /* LOGICAL_AND  */
-    LOGICAL_OR = 295,              /* LOGICAL_OR  */
-    NOT_EQUALS = 296,              /* NOT_EQUALS  */
-    THEN = 297                     /* THEN  */
+    BEGIN = 258,                   /* BEGIN  */
+    END = 259,                     /* END  */
+    CONST = 260,                   /* CONST  */
+    ELSE = 261,                    /* ELSE  */
+    FOR = 262,                     /* FOR  */
+    IF = 263,                      /* IF  */
+    ADDRESS = 264,                 /* ADDRESS  */
+    INTTYPE = 265,                 /* INTTYPE  */
+    RETURN = 266,                  /* RETURN  */
+    INVALID_TOKEN = 267,           /* INVALID_TOKEN  */
+    VOIDTYPE = 268,                /* VOIDTYPE  */
+    IDENTIFIER = 269,              /* IDENTIFIER  */
+    INTEGER_CONSTANT = 270,        /* INTEGER_CONSTANT  */
+    CHARACTER_CONSTANT = 271,      /* CHARACTER_CONSTANT  */
+    STRING_LITERAL = 272,          /* STRING_LITERAL  */
+    LEFT_SQUARE_BRACKET = 273,     /* LEFT_SQUARE_BRACKET  */
+    SLASH = 274,                   /* SLASH  */
+    QUESTION_MARK = 275,           /* QUESTION_MARK  */
+    ASSIGNMENT = 276,              /* ASSIGNMENT  */
+    COMMA = 277,                   /* COMMA  */
+    RIGHT_SQUARE_BRACKET = 278,    /* RIGHT_SQUARE_BRACKET  */
+    LEFT_PARENTHESES = 279,        /* LEFT_PARENTHESES  */
+    LEFT_CURLY_BRACKET = 280,      /* LEFT_CURLY_BRACKET  */
+    RIGHT_CURLY_BRACKET = 281,     /* RIGHT_CURLY_BRACKET  */
+    ARROW = 282,                   /* ARROW  */
+    ASTERISK = 283,                /* ASTERISK  */
+    PLUS = 284,                    /* PLUS  */
+    MINUS = 285,                   /* MINUS  */
+    EXCLAMATION = 286,             /* EXCLAMATION  */
+    MODULO = 287,                  /* MODULO  */
+    LESS_THAN = 288,               /* LESS_THAN  */
+    GREATER_THAN = 289,            /* GREATER_THAN  */
+    LESS_EQUAL_THAN = 290,         /* LESS_EQUAL_THAN  */
+    GREATER_EQUAL_THAN = 291,      /* GREATER_EQUAL_THAN  */
+    COLON = 292,                   /* COLON  */
+    SEMI_COLON = 293,              /* SEMI_COLON  */
+    RIGHT_PARENTHESES = 294,       /* RIGHT_PARENTHESES  */
+    EQUALS = 295,                  /* EQUALS  */
+    LOGICAL_AND = 296,             /* LOGICAL_AND  */
+    LOGICAL_OR = 297,              /* LOGICAL_OR  */
+    NOT_EQUALS = 298,              /* NOT_EQUALS  */
+    THEN = 299                     /* THEN  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -117,7 +119,7 @@ union YYSTYPE
     SymbolType *symbolType;
     Symbol *symbol;
 
-#line 121 "A6_42.tab.h"
+#line 123 "A6_42.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;
